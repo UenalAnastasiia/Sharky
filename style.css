@@ -3,9 +3,3 @@ body {
     flex-direction: column;
     align-items: center;
 }
-
-canvas {
-    background-color: #6262cd;
-    width: 720px;
-    height: 480px;
-}
