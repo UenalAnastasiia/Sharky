@@ -8,8 +8,4 @@ class BackgroundObject extends MovableObject {
         this.y = this.canvasHeight - this.height;
     }
 
-
-    jump() {
-
-    }
 }
