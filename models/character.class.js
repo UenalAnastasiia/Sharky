@@ -1,6 +1,7 @@
 class Character extends MovableObject {
-    currentImage = 0;
     world;
+    height = 200;
+    width = 200;
     speed = 5;
     IMAGES_SWIMMING = [
         '../img/sharkie/idle/1.png',
@@ -13,7 +14,6 @@ class Character extends MovableObject {
         '../img/sharkie/idle/8.png'
     ];
     swimmming_sound = new Audio('audio/swimming.mp3');
-
 
     constructor() {
         super().loadImage('../img/sharkie/idle/1.png');
@@ -34,34 +34,32 @@ class Character extends MovableObject {
 
         setInterval(() => {
             this.swimmming_sound.pause();
-            if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT || this.world.keyboard.DOWN || this.world.keyboard.UP) {
-                let i = this.currentImage % this.IMAGES_SWIMMING.length;    // % is Modulu => means the math rest   // let i = 0 % 8;
-                let path = this.IMAGES_SWIMMING[i];
-                this.img = this.imageCache[path];
-                this.currentImage++;
+            if (this.world.keyboard.KEY_RIGHT || this.world.keyboard.KEY_LEFT || this.world.keyboard.KEY_DOWN || this.world.keyboard.KEY_UP) {
+                this.swimmingAnimation(this.IMAGES_SWIMMING);
             }
-        }, 150);
+        }, 100);
     }
 
+    
     keyboardMoves() {
-        if (this.world.keyboard.RIGHT && this.x < this.world.level.level_end_x) {
+        if (this.world.keyboard.KEY_RIGHT && this.x < this.world.level.level_end_x) {
             this.x += this.speed;
             this.mirrorImage = false;
             this.swimmming_sound.play();
         }
 
-        if (this.world.keyboard.LEFT && this.x > -620) {
+        if (this.world.keyboard.KEY_LEFT && this.x > -620) {
             this.x -= this.speed;
             this.mirrorImage = true;
             this.swimmming_sound.play();
         }
 
-        if (this.world.keyboard.UP && this.y > -90) {
+        if (this.world.keyboard.KEY_UP && this.y > -90) {
             this.y -= this.speed;
             this.swimmming_sound.play();
         }
 
-        if (this.world.keyboard.DOWN && this.y < this.world.level.level_end_y) {
+        if (this.world.keyboard.KEY_DOWN && this.y < this.world.level.level_end_y) {
             this.y += this.speed;
             this.swimmming_sound.play();
         }

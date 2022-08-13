@@ -12,45 +12,45 @@ function init() {
 
 document.addEventListener("keydown", (event) => {
     if(event.key == "ArrowRight") {
-        keyboard.RIGHT = true;
+        keyboard.KEY_RIGHT = true;
     }
 
     if(event.key == "ArrowLeft") {
-        keyboard.LEFT = true;
+        keyboard.KEY_LEFT = true;
     }
 
     if(event.key == "ArrowDown") {
-        keyboard.DOWN = true;
+        keyboard.KEY_DOWN = true;
     }
 
     if(event.key == "ArrowUp") {
-        keyboard.UP = true;
+        keyboard.KEY_UP = true;
     }
 
     if(event.key == " ") {
-        keyboard.SPACE = true;
+        keyboard.KEY_SPACE = true;
     } 
 });
 
 
 document.addEventListener("keyup", (event) => {
     if(event.key == "ArrowRight") {
-        keyboard.RIGHT = false;
+        keyboard.KEY_RIGHT = false;
     }
 
     if(event.key == "ArrowLeft") {
-        keyboard.LEFT = false;
+        keyboard.KEY_LEFT = false;
     }
 
     if(event.key == "ArrowDown") {
-        keyboard.DOWN = false;
+        keyboard.KEY_DOWN = false;
     }
 
     if(event.key == "ArrowUp") {
-        keyboard.UP = false;
+        keyboard.KEY_UP = false;
     }
 
     if(event.key == " ") {
-        keyboard.SPACE = false;
+        keyboard.KEY_SPACE = false;
     } 
 });

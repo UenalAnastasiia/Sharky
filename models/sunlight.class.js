@@ -2,6 +2,7 @@ class Sunlight extends MovableObject {
     x = 0;
     y = 0;
     height = 300;
+    width = 400;
     width = this.canvasWidth;
 
 
@@ -12,7 +13,10 @@ class Sunlight extends MovableObject {
         this.animate();
     }
 
+    
     animate() {
-        this.moveLeft();
+        setInterval(() => {
+            this.x += this.speed;
+        }, 1000 / 60);
     }
 }
