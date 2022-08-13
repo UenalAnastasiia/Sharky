@@ -1,39 +1,6 @@
 class World {
     character = new Character();
-    enemies = [
-        new Fish(),
-        new Fish(),
-        new Fish()
-    ];
-    sunlights = [
-        new Sunlight()
-    ];
-    backgroundObjects = [
-        new BackgroundObject('../img/background/layers/water/D2.png', -720),
-        new BackgroundObject('../img/background/layers/fondo2/L2.png', -720),
-        new BackgroundObject('../img/background/layers/fondo1/L2.png', -720),
-        new BackgroundObject('../img/background/layers/floor/L2.png', -720),
-
-        new BackgroundObject('../img/background/layers/water/D1.png', 0),
-        new BackgroundObject('../img/background/layers/fondo2/L1.png', 0),
-        new BackgroundObject('../img/background/layers/fondo1/L1.png', 0),
-        new BackgroundObject('../img/background/layers/floor/L1.png', 0),
-        
-        new BackgroundObject('../img/background/layers/water/D2.png', 720),
-        new BackgroundObject('../img/background/layers/fondo2/L2.png', 720),
-        new BackgroundObject('../img/background/layers/fondo1/L2.png', 720),
-        new BackgroundObject('../img/background/layers/floor/L2.png', 720),
-
-        new BackgroundObject('../img/background/layers/water/D1.png', 720*2),
-        new BackgroundObject('../img/background/layers/fondo2/L1.png', 720*2),
-        new BackgroundObject('../img/background/layers/fondo1/L1.png', 720*2),
-        new BackgroundObject('../img/background/layers/floor/L1.png', 720*2),
-        
-        new BackgroundObject('../img/background/layers/water/D2.png', 720*3),
-        new BackgroundObject('../img/background/layers/fondo2/L2.png', 720*3),
-        new BackgroundObject('../img/background/layers/fondo1/L2.png', 720*3),
-        new BackgroundObject('../img/background/layers/floor/L2.png', 720*3)
-    ];
+    level = level1;
     canvas;
     ctx;
     keyboard;
@@ -65,10 +32,10 @@ class World {
 
         this.ctx.translate(this.camera_x, 0);      // translate - switched the object for x-coordinate and y-coordinate 
 
-        this.addObjectsToMap(this.backgroundObjects);
-        this.addObjectsToMap(this.sunlights);
+        this.addObjectsToMap(this.level.backgroundObjects);
+        this.addObjectsToMap(this.level.sunlights);
         this.addToMap(this.character);
-        this.addObjectsToMap(this.enemies);
+        this.addObjectsToMap(this.level.enemies);
 
         this.ctx.translate(-this.camera_x, 0);
 

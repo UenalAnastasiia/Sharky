@@ -8,7 +8,7 @@ class Sunlight extends MovableObject {
     constructor() {
         super().loadImage('../img/background/layers/light/completo.png');
 
-        this.x = Math.random() * 500;
+        this.x = Math.random() * 600;
         this.animate();
     }
 
