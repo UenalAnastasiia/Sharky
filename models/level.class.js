@@ -9,7 +9,6 @@ class Level {
         this.enemies = enemies;
         this.sunlights = sunlights;
         this.backgroundObjects = backgroundObjects;
-
     }
 
 }

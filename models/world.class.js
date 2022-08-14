@@ -32,14 +32,26 @@ class World {
 
         this.ctx.translate(this.camera_x, 0);      // translate - switched the object for x-coordinate and y-coordinate 
 
+        this.addObjectsToClasses();
+
+        this.ctx.translate(-this.camera_x, 0);
+
+        this.repeateDraw();
+    }
+
+
+    addObjectsToClasses() {
         this.addObjectsToMap(this.level.backgroundObjects);
         this.addObjectsToMap(this.level.sunlights);
         this.addToMap(this.character);
         this.addObjectsToMap(this.level.enemies);
+    }
 
-        this.ctx.translate(-this.camera_x, 0);
 
-        // draw() will be called again and again
+    /**
+     * draw() will be called again and again
+     */
+    repeateDraw() {
         let self = this;
         requestAnimationFrame(function () {
             self.draw();
@@ -47,6 +59,11 @@ class World {
     }
 
 
+    /**
+     * 
+     * @param {Game-Objects} objects 
+     * Load to the map all exist objects from the game 
+     */
     addObjectsToMap(objects) {
         objects.forEach(object => {
             this.addToMap(object);
@@ -54,6 +71,10 @@ class World {
     }
 
 
+    /**
+     * @param {movableObjectImage} moveObj 
+     * Character-Images will be turned in mirror direction, if you press LEFT and return 
+     */
     addToMap(moveObj) {
         if (moveObj.mirrorImage) {
             this.turnImage(moveObj);
@@ -66,10 +87,6 @@ class World {
     }
 
 
-    /**
-     * @param {movableObjectImage} moveObj 
-     * Character-Images will be turned in mirror direction, if you press LEFT and return 
-     */
     turnImage(moveObj) {
         this.ctx.save();
         this.ctx.translate(moveObj.width, 0);   // return the image for 180 degree => mirror direction

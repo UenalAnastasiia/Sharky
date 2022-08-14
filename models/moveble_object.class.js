@@ -8,6 +8,9 @@ class MovableObject {
     speed = 0.15;
     mirrorImage = false;
     currentImage = 0;
+    speedY = 0;
+    acceleration = 0.01;
+
 
     loadImage(path) {
         this.img = new Image();             // this.img = document.getElementById('image') <img id="image">
@@ -37,11 +40,29 @@ class MovableObject {
         this.img = this.imageCache[path];
         this.currentImage++;
     }
-    
+
 
     moveLeft() {
         setInterval(() => {
             this.x -= this.speed;
         }, 1000 / 60);
+    }
+
+
+    /**
+     * Character sinks slowly to the ground if doesn´t click KEY_UP
+     */
+    applyGravity() {
+        setInterval(() => {
+            if (this.isAboveGround()) {
+                this.y -= this.speedY;
+                this.speedY -= this.acceleration;
+            }
+        }, 1000 / 25);
+    }
+
+
+    isAboveGround() {
+        return this.y < 310;
     }
 }
