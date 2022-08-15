@@ -11,8 +11,9 @@ const level1 = new Level(
         new Jelly_Dangerous(),
         new Jelly_Dangerous(),
         new Jelly_Dangerous(),
-        new Jelly_Dangerous(),
-        new Jelly_Dangerous(),
+        new Jelly_Regular(),
+        new Jelly_Regular(),
+        new Jelly_Regular(),
         new Endboss()
     ],
 
