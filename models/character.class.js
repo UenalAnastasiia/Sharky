@@ -23,13 +23,38 @@ class Character extends MovableObject {
         '../img/sharkie/attack/fin_slap/8.png'
     ];
 
+    IMAGES_DEAD = [
+        '../img/sharkie/dead/poisoned/1.png',
+        '../img/sharkie/dead/poisoned/2.png',
+        '../img/sharkie/dead/poisoned/3.png',
+        '../img/sharkie/dead/poisoned/4.png',
+        '../img/sharkie/dead/poisoned/5.png',
+        '../img/sharkie/dead/poisoned/6.png',
+        '../img/sharkie/dead/poisoned/7.png',
+        '../img/sharkie/dead/poisoned/8.png',
+        '../img/sharkie/dead/poisoned/9.png',
+        '../img/sharkie/dead/poisoned/10.png',
+        '../img/sharkie/dead/poisoned/11.png',
+        '../img/sharkie/dead/poisoned/12.png'
+    ];
+
+    IMAGES_HURT = [
+        '../img/sharkie/hurt/poisoned/2.png',
+        '../img/sharkie/hurt/poisoned/3.png',
+        '../img/sharkie/hurt/poisoned/4.png',
+        '../img/sharkie/hurt/poisoned/5.png'
+    ];
+
+
     swimmming_sound = new Audio('audio/swimming.mp3');
 
     constructor() {
         super().loadImage('../img/sharkie/idle/1.png');
         this.loadImages(this.IMAGES_SWIMMING);
-        this.applyGravity();
         this.loadImages(this.IMAGES_ATTACK);
+        this.loadImages(this.IMAGES_DEAD);
+        this.loadImages(this.IMAGES_HURT);
+        this.applyGravity();
         this.animate();
     }
 
@@ -45,7 +70,11 @@ class Character extends MovableObject {
         }, 1000 / 60);
 
         setInterval(() => {
-            if (this.world.keyboard.KEY_SPACE) {
+            if (this.isDead()) {
+                this.swimmingAnimation(this.IMAGES_DEAD);
+            } else if (this.isHurt()) {
+                this.swimmingAnimation(this.IMAGES_HURT);
+            } else if (this.world.keyboard.KEY_SPACE) {
                 this.characterAttack();
             } else {
                 this.showSwimmImages();
