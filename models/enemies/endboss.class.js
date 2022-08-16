@@ -7,7 +7,7 @@ class Endboss extends MovableObject {
         super().loadImage('../img/enemy/final_enemy/floating/1.png');
         this.loadImages(ENEMIES_ENDBOSS_IMAGES.SWIMMING);
 
-        this.x = 200;
+        this.x = 2400;
         this.animate();
     }
 

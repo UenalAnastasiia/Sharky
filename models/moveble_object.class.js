@@ -49,15 +49,21 @@ class MovableObject extends DrawableObject {
 
     // Colliding
     isColliding(moveObj) {
-        return this.x + this.width > moveObj.x &&
-            this.y + this.height > moveObj.y &&
-            this.x < moveObj.x &&
+        /* if (this instanceof Endboss) {
+            return this.x + 20 + 310 > moveObj.x + 35 &&
+            this.y + 130 + 180 > moveObj.y &&
+            this.x + 20 < moveObj.x + 35 &&
             this.y < moveObj.y + moveObj.height;
+        } */
+        return this.x + this.width > moveObj.x &&
+            this.y + 110 + this.height > moveObj.y &&
+            this.x < moveObj.x &&
+            this.y + 110 < moveObj.y + 90 + 130;
     }
 
 
     hit() {
-        this.energy -= 5;
+        this.energy -= 1;
         if (this.energy < 0) {
             this.energy = 0;
         } else {
@@ -72,7 +78,7 @@ class MovableObject extends DrawableObject {
     isHurt() {
         let timepassed = new Date().getTime() - this.lastHit;   // Differenz in ms
         timepassed = timepassed / 1000; // Differenz in Sec
-        return timepassed < 2;
+        return timepassed < 1;
     }
 
 

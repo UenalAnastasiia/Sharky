@@ -48,12 +48,12 @@ class DrawableObject {
             ctx.strokeStyle = 'blue';
             ctx.rect(this.x, this.y, this.width, this.height);
             ctx.stroke();
-        } else if (this instanceof Endboss) {
+        } /* else if (this instanceof Endboss) {
             ctx.beginPath();
             ctx.lineWidth = '3';
             ctx.strokeStyle = 'yellow';
             ctx.rect(this.x + 20, this.y + 110, 310, 180);
             ctx.stroke(); 
-        }
+        } */
     }
 }
