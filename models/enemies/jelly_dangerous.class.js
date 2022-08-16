@@ -4,17 +4,9 @@ class Jelly_Dangerous extends MovableObject {
     x = 1200;
 
 
-    IMAGES_SWIMMING_JELLY_DANGEROUS = [
-        '../img/enemy/jelly_fish/super_dangerous/Pink 1.png',
-        '../img/enemy/jelly_fish/super_dangerous/Pink 2.png',
-        '../img/enemy/jelly_fish/super_dangerous/Pink 3.png',
-        '../img/enemy/jelly_fish/super_dangerous/Pink 4.png',
-    ];
-
-
     constructor() {
         super().loadImage('../img/enemy/jelly_fish/super_dangerous/Pink 1.png');
-        this.loadImages(this.IMAGES_SWIMMING_JELLY_DANGEROUS);
+        this.loadImages(ENEMIES_JELLY_DANGEROUS_IMAGES.SWIMMING);
         this.animate();
     }
 
@@ -22,7 +14,7 @@ class Jelly_Dangerous extends MovableObject {
     animate() {
         this.jellySwimmDirection();
         setInterval(() => {
-            this.swimmingAnimation(this.IMAGES_SWIMMING_JELLY_DANGEROUS);
+            this.swimmingAnimation(ENEMIES_JELLY_DANGEROUS_IMAGES.SWIMMING);
         }, 100);
     }
 

@@ -3,18 +3,10 @@ class Fish_Puffer_Red extends MovableObject {
     width = 70;
     x = 600;
 
-    IMAGES_SWIMMING_PUFFER_RED = [
-        '../img/enemy/puffer_fish/bubbleeswim/3.bubbleswim1.png',
-        '../img/enemy/puffer_fish/bubbleeswim/3.bubbleswim2.png',
-        '../img/enemy/puffer_fish/bubbleeswim/3.bubbleswim3.png',
-        '../img/enemy/puffer_fish/bubbleeswim/3.bubbleswim4.png',
-        '../img/enemy/puffer_fish/bubbleeswim/3.bubbleswim5.png'
-    ];
-
 
     constructor() {
         super().loadImage('../img/enemy/puffer_fish/bubbleeswim/3.bubbleswim1.png');
-        this.loadImages(this.IMAGES_SWIMMING_PUFFER_RED);
+        this.loadImages(ENEMIES_PUFFER_RED_IMAGES.SWIMMING);
         this.pufferSwimmDirection();
         this.animate();
     }
@@ -24,7 +16,7 @@ class Fish_Puffer_Red extends MovableObject {
         this.moveLeft();
 
         setInterval(() => {
-            this.swimmingAnimation(this.IMAGES_SWIMMING_PUFFER_RED);
+            this.swimmingAnimation(ENEMIES_PUFFER_RED_IMAGES.SWIMMING);
         }, 100);
     }
 

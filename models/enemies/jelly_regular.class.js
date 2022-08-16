@@ -5,17 +5,9 @@ class Jelly_Regular extends MovableObject {
     y = 350;
 
 
-    IMAGES_SWIMMING_JELLY_REGULAR = [
-        '../img/enemy/jelly_fish/regular_damage/Yellow 1.png',
-        '../img/enemy/jelly_fish/regular_damage/Yellow 2.png',
-        '../img/enemy/jelly_fish/regular_damage/Yellow 3.png',
-        '../img/enemy/jelly_fish/regular_damage/Yellow 4.png',
-    ];
-
-
     constructor() {
         super().loadImage('../img/enemy/jelly_fish/regular_damage/Yellow 1.png');
-        this.loadImages(this.IMAGES_SWIMMING_JELLY_REGULAR);
+        this.loadImages(ENEMIES_JELLY_REGULAR_IMAGES.SWIMMING);
         this.animate();
     }
 
@@ -23,7 +15,7 @@ class Jelly_Regular extends MovableObject {
     animate() {
         this.jellySwimmDirection();
         setInterval(() => {
-            this.swimmingAnimation(this.IMAGES_SWIMMING_JELLY_REGULAR);
+            this.swimmingAnimation(ENEMIES_JELLY_REGULAR_IMAGES.SWIMMING);
         }, 100);
     }
 
