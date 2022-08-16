@@ -1,4 +1,4 @@
-class CoinBar extends DrawableObject {
+class StatusBar_Life extends DrawableObject {
     percentage = 100;
     height = 50;
     width = 200;
@@ -6,16 +6,16 @@ class CoinBar extends DrawableObject {
 
     constructor() {
         super();
-        this.loadImages(BAR_IMAGES.COIN);
+        this.loadImages(STATUSBAR_IMAGES.LIFE);
         this.x = 5;
-        this.y = 25;
+        this.y = -10;
         this.setPercentage(100);
     }
 
 
     setPercentage(percentage) {
         this.percentage = percentage;
-        let path = BAR_IMAGES.COIN[this.resolveImageIndex()];
+        let path = STATUSBAR_IMAGES.LIFE[this.resolveImageIndex()];
         this.img = this.imageCache[path];
     }
 

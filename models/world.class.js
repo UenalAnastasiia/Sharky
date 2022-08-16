@@ -5,9 +5,10 @@ class World {
     ctx;
     keyboard;
     camera_x = 0;
-    statusBar = new StatusBar();
-    coinBar = new CoinBar();
+    statusBar_life = new StatusBar_Life();
+    statusBar_coin = new StatusBar_Coin();
 
+    
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
         this.canvas = canvas;
@@ -54,8 +55,8 @@ class World {
     fixStatusBarToMap() {
         this.ctx.translate(-this.camera_x, 0);
         /* ----- Space for fixed object ----- */
-        this.addToMap(this.statusBar);
-        this.addToMap(this.coinBar);
+        this.addToMap(this.statusBar_life);
+        this.addToMap(this.statusBar_coin);
         this.ctx.translate(this.camera_x, 0);
     }
 
@@ -72,9 +73,8 @@ class World {
 
 
     /**
-     * 
-     * @param {Game-Objects} objects 
      * Load to the map all exist objects from the game 
+     * @param {object} objects 
      */
     addObjectsToMap(objects) {
         objects.forEach(object => {
@@ -84,7 +84,7 @@ class World {
 
 
     /**
-     * @param {movableObjectImage} moveObj 
+     * @param {object} moveObj 
      * Character-Images will be turned in mirror direction, if you press LEFT and return 
      */
     addToMap(moveObj) {
@@ -120,7 +120,7 @@ class World {
             this.level.enemies.forEach((enemy) => {
                 if (this.character.isColliding(enemy)) {
                     this.character.hit();
-                    this.statusBar.setPercentage(this.character.energy)
+                    this.statusBar_life.setPercentage(this.character.energy)
                     // console.log('Collision with Character, energy ', this.character.energy);
                 }
             });

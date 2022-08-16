@@ -47,18 +47,20 @@ class MovableObject extends DrawableObject {
     }
 
 
-    // Colliding
+    /**
+     * Colliding, if objects crash at certain points
+     * @param {object} moveObj 
+     * @returns true/false
+     */
     isColliding(moveObj) {
-        /* if (this instanceof Endboss) {
-            return this.x + 20 + 310 > moveObj.x + 35 &&
-            this.y + 130 + 180 > moveObj.y &&
-            this.x + 20 < moveObj.x + 35 &&
-            this.y < moveObj.y + moveObj.height;
-        } */
-        return this.x + this.width > moveObj.x &&
-            this.y + 110 + this.height > moveObj.y &&
-            this.x < moveObj.x &&
-            this.y + 110 < moveObj.y + 90 + 130;
+        return this.x  + 35 + 130 > moveObj.x &&
+        this.y  + 90 + 60 > moveObj.y &&
+        this.x  + 35 < moveObj.x &&
+        this.y  + 90 < moveObj.y + moveObj.height;
+        // return this.x + this.width > moveObj.x &&
+        //     this.y + this.height > moveObj.y &&
+        //     this.x < moveObj.x &&
+        //     this.y < moveObj.y + moveObj.height;
     }
 
 
@@ -74,6 +76,7 @@ class MovableObject extends DrawableObject {
 
     /**
      * if timepassed < 5 => returns true
+     * @returns true/false
      */
     isHurt() {
         let timepassed = new Date().getTime() - this.lastHit;   // Differenz in ms
@@ -82,6 +85,10 @@ class MovableObject extends DrawableObject {
     }
 
 
+    /**
+     * if energy = 0 => returns true
+     * @returns true/false
+     */
     isDead() {
         return this.energy == 0;
     }

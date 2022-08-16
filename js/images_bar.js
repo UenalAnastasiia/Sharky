@@ -1,5 +1,5 @@
-BAR_IMAGES = {
-    'STATUS': [
+STATUSBAR_IMAGES = {
+    'LIFE': [
         '../img/marcadores/orange/0_life.png',
         '../img/marcadores/orange/20_life.png',
         '../img/marcadores/orange/40_life.png',
