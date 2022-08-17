@@ -1,12 +1,25 @@
+@font-face {
+    font-family: 'luckiest_guy';
+    src: url('fonts/luckiest_guy_regular.ttf')
+    format('truetype') 
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('img/background/light/1.png');
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    /* background-image: url('img/background/light/1.png'); */
+    background-image: url('img/background/water_bg.jpg');
+    font-family: 'luckiest_guy', Arial, Helvetica, sans-serif;
 }
 
 h1 {
-    margin-top: 150px;
+    font-size: 48px;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 canvas {
