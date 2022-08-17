@@ -1,3 +1,0 @@
-class TrowableObject extends MovableObject {
-    
-}
