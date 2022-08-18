@@ -66,6 +66,14 @@ const level1 = new Level(
         new CoinsObject(),
         new CoinsObject(),
         new CoinsObject()
+    ],
+
+    [
+        new LifeObject(),
+        new LifeObject(),
+        new LifeObject(),
+        new LifeObject(),
+        new LifeObject()
     ]
 
 );

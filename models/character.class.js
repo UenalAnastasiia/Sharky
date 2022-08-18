@@ -33,7 +33,9 @@ class Character extends MovableObject {
                 this.swimmingAnimation(CHARACTER_IMAGES.HURT);
             } else if (this.world.keyboard.KEY_SPACE) {
                 this.characterAttack();
-            } else {
+            } /* else if (this.checkThrowUpBubble()) {
+                this.characterBubbleThrowUp();
+            } */ else {
                 this.showSwimmImages();
             }
         }, 75);
@@ -98,5 +100,10 @@ class Character extends MovableObject {
      */
     characterAttack() {
         this.swimmingAnimation(CHARACTER_IMAGES.ATTACK);
+    }
+
+
+    characterBubbleThrowUp() {
+        this.swimmingAnimation(CHARACTER_IMAGES.BUBBLE_THROW_UP);
     }
 }

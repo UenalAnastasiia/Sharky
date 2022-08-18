@@ -32,19 +32,25 @@ class World {
      * Load all images from the objects to the map
      */
     draw() {
-        // clear all context-objects
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
+        this.clearCanvas();
         this.ctx.translate(this.camera_x, 0);      // translate - switched the object for x-coordinate and y-coordinate 
-
+        
         this.addObjectsToClasses();
+
         this.fixStatusBarToMap();
 
         this.addToMap(this.character);
         this.addObjectsToMap(this.bubbleObject);
-        // this.addToMap(this.coinsObject);
         this.ctx.translate(-this.camera_x, 0);
         this.repeateDraw();
+    }
+
+
+    /**
+     * clear all context-objects
+     */
+    clearCanvas() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 
 
@@ -53,6 +59,7 @@ class World {
         this.addObjectsToMap(this.level.sunlights);
         this.addObjectsToMap(this.level.enemies);
         this.addObjectsToMap(this.level.coinsObject);
+        this.addObjectsToMap(this.level.lifeObject);
     }
 
 
@@ -142,6 +149,7 @@ class World {
         if (this.keyboard.KEY_D) {
             let bubble = new BubbleObject(this.character.x + 120, this.character.y + 120);
             this.bubbleObject.push(bubble);
+            this.character.characterBubbleThrowUp(this.character.x, this.character.y, this.character.width, this.character.height);
         }
     }
 }

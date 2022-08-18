@@ -11,9 +11,12 @@ body {
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    /* background-image: url('img/background/light/1.png'); */
     background-image: url('img/background/water_bg.jpg');
     font-family: 'luckiest_guy', Arial, Helvetica, sans-serif;
+}
+
+.d-none {
+    display: none !important;
 }
 
 h1 {
@@ -26,4 +29,95 @@ canvas {
     border: 6px solid white;
     box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
     border-radius: 10px;
+    margin-top: 150px;
 }
+
+/* INFO-BAR */
+
+#info-btn-open,  #info-btn-close {
+    padding: 2px;
+    background: #ffffffa6;
+    border-radius: 100%;
+    border: 2px solid white;
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    z-index: 1;
+    height: 48px;
+    box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
+}
+
+#info-btn-open:hover, #info-btn-close:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
+#infobar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background: #2626feb8;
+    margin-bottom: -30px;
+    position: absolute;
+    top: 0;
+    width: calc(100% - 16px);
+    box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
+}
+
+.margin-24 {
+    margin-right: 24px;
+}
+
+.info-coin {    
+    margin-top: -6px;
+    height: 90px;
+    width: 90px;
+}
+
+.info-key-arrow {
+    height: 60px;
+    width: 90px;
+    margin-bottom: -60px;
+}
+
+.info-key-D {
+    height: 40px;
+    width: 40px;
+    margin-bottom: -50px;
+    margin-top: 12px;
+}
+
+.info-key-space {
+    height: 40px;
+    width: 150px;
+    margin-bottom: -50px;
+    margin-top: 12px;
+}
+
+.info-img {
+    height: 150px;
+    width: 150px;
+    margin-bottom: -30px;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 24px;
+    padding: 8px;
+    background: #ffffff5e;
+    max-width: 170px;
+    min-height: 120px;
+}
+
+.info-box span {
+    font-size: 16px;
+    text-align: center;
+}
+
+/* INFO-BAR END */
+

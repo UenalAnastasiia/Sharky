@@ -2,6 +2,7 @@ let canvas;
 let world;
 let keyboard = new Keyboard();
 
+
 function init() {
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
@@ -10,7 +11,21 @@ function init() {
 }
 
 
+/**
+ * Show Infobar 
+ */
+function showHelpInfo() {
+    document.getElementById('info-btn-open').classList.add('d-none');
+    document.getElementById('info-btn-close').classList.remove('d-none');
+    document.getElementById('infobar').classList.remove('d-none');
+}
 
+
+function closeHelpInfo() {
+    document.getElementById('info-btn-open').classList.remove('d-none');
+    document.getElementById('info-btn-close').classList.add('d-none');
+    document.getElementById('infobar').classList.add('d-none');
+}
 
 /**
  * Keyboard Event
