@@ -5,6 +5,7 @@ class Character extends MovableObject {
     speed = 5;
     swimmming_sound = new Audio('audio/swimming.mp3');
 
+    
     constructor() {
         super().loadImage('../img/sharkie/idle/1.png');
         this.loadImages(CHARACTER_IMAGES.SWIMMING);
@@ -33,9 +34,9 @@ class Character extends MovableObject {
                 this.swimmingAnimation(CHARACTER_IMAGES.HURT);
             } else if (this.world.keyboard.KEY_SPACE) {
                 this.characterAttack();
-            } /* else if (this.checkThrowUpBubble()) {
+            } else if (this.world.keyboard.KEY_D) {
                 this.characterBubbleThrowUp();
-            } */ else {
+            } else {
                 this.showSwimmImages();
             }
         }, 75);
@@ -104,6 +105,6 @@ class Character extends MovableObject {
 
 
     characterBubbleThrowUp() {
-        this.swimmingAnimation(CHARACTER_IMAGES.BUBBLE_THROW_UP);
+        this.swimmingAnimation(CHARACTER_IMAGES.ATTACK);
     }
 }

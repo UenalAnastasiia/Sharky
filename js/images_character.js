@@ -41,14 +41,15 @@ CHARACTER_IMAGES = {
         '../img/sharkie/hurt/poisoned/5.png'
     ], 
 
-    'BUBBLE_THROW_UP': [
-        'img/sharkie/attack/bubble_trap/op2_without_bubbles/1.png',
-        'img/sharkie/attack/bubble_trap/op2_without_bubbles/2.png',
-        'img/sharkie/attack/bubble_trap/op2_without_bubbles/3.png',
-        'img/sharkie/attack/bubble_trap/op2_without_bubbles/4.png',
-        'img/sharkie/attack/bubble_trap/op2_without_bubbles/5.png',
-        'img/sharkie/attack/bubble_trap/op2_without_bubbles/6.png',
-        'img/sharkie/attack/bubble_trap/op2_without_bubbles/7.png'
+    'BUBBLEATTACK': [
+        '../img/sharkie/attack/bubble/1.png',
+        '../img/sharkie/attack/bubble/2.png',
+        '../img/sharkie/attack/bubble/3.png',
+        '../img/sharkie/attack/bubble/4.png',
+        '../img/sharkie/attack/bubble/5.png',
+        '../img/sharkie/attack/bubble/6.png',
+        '../img/sharkie/attack/bubble/7.png'
     ]
 }
+
 

@@ -149,7 +149,7 @@ class World {
         if (this.keyboard.KEY_D) {
             let bubble = new BubbleObject(this.character.x + 120, this.character.y + 120);
             this.bubbleObject.push(bubble);
-            this.character.characterBubbleThrowUp(this.character.x, this.character.y, this.character.width, this.character.height);
+            // this.character.characterBubbleThrowUp(this.character.x, this.character.y, this.character.width, this.character.height);
         }
     }
 }
