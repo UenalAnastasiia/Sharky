@@ -11,6 +11,12 @@ function init() {
 }
 
 
+function backgroundMusic() {
+    let audio = new Audio('../audio/background.mp3');
+    audio.play();
+}
+
+
 /**
  * Show Infobar 
  */
