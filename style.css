@@ -47,7 +47,20 @@ canvas {
     box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
 }
 
-#info-btn-open:hover, #info-btn-close:hover {
+#restart-btn {
+    position: absolute;
+    top: 16px;
+    right: 100px;
+    padding: 2px;
+    background: #ffffffa6;
+    border-radius: 100%;
+    z-index: 1;
+    border: 2px solid white;
+    height: 52px;
+    box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
+}
+
+#info-btn-open:hover, #info-btn-close:hover, #restart-btn:hover {
     cursor: pointer;
     background-color: white;
 }

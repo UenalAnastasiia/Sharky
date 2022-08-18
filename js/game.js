@@ -16,6 +16,7 @@ function init() {
  */
 function showHelpInfo() {
     document.getElementById('info-btn-open').classList.add('d-none');
+    document.getElementById('restart-btn').classList.add('d-none');
     document.getElementById('info-btn-close').classList.remove('d-none');
     document.getElementById('infobar').classList.remove('d-none');
 }
@@ -23,6 +24,7 @@ function showHelpInfo() {
 
 function closeHelpInfo() {
     document.getElementById('info-btn-open').classList.remove('d-none');
+    document.getElementById('restart-btn').classList.remove('d-none');
     document.getElementById('info-btn-close').classList.add('d-none');
     document.getElementById('infobar').classList.add('d-none');
 }
