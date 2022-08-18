@@ -42,6 +42,7 @@ class World {
 
         this.addToMap(this.character);
         this.addObjectsToMap(this.bubbleObject);
+        // this.addToMap(this.coinsObject);
         this.ctx.translate(-this.camera_x, 0);
         this.repeateDraw();
     }
@@ -51,6 +52,7 @@ class World {
         this.addObjectsToMap(this.level.backgroundObjects);
         this.addObjectsToMap(this.level.sunlights);
         this.addObjectsToMap(this.level.enemies);
+        this.addObjectsToMap(this.level.coinsObject);
     }
 
 
