@@ -46,7 +46,8 @@
     <div id="infobar">
         <div class="music-box">
             <img id="audio-img" onmouseover="showMusicSet()" src="img/music.png">
-            <audio class="audio d-none" onmouseout="hiddeMusicSet()" id="audio" src="../audio/background.mp3" controls></audio>
+            <!-- loop => repeat music --> <!-- controls => setting-box for play/stop music -->
+            <audio loop class="audio d-none" onmouseout="hiddeMusicSet()" id="audio" src="../audio/background.mp3" controls></audio>
         </div>
         <div class="info-box margin-8">
             <img class="info-coin" src="img/marcadores/coins/3.png">

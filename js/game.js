@@ -10,6 +10,9 @@ function init() {
 }
 
 
+/**
+ * Show Music settings in Infobar to play or stop background music
+ */
 function showMusicSet() {
     document.getElementById('audio').classList.remove('d-none');
 }
@@ -17,6 +20,7 @@ function showMusicSet() {
 function hiddeMusicSet() {
     document.getElementById('audio').classList.add('d-none');
 }
+
 
 /**
  * Show Infobar 
@@ -37,6 +41,7 @@ function closeHelpInfo() {
     document.getElementById('info-btn-close').classList.add('d-none');
     document.getElementById('infobar').classList.add('d-none');
 }
+
 
 /**
  * Keyboard Event
