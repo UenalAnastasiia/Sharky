@@ -42,9 +42,9 @@
     <div id="start-page">
         <img onclick="RulesModal()" class="rules-img" src="img/rules.png">
         <h1>Underwater World from Sharky</h1>
-        <!-- <img onclick="init()" class="start-img" src="img/botones/start/1.png"> -->
         <button class="start-btn" onclick="loadGame()">START</button>
 
+        <!-- INSTRUCTION -->
         <div class="popUpBox" id="popUpBox">
             <div class="popUpWindow">
                 <button class="popUpBtn" onclick="RulesModal()">X</button>
@@ -87,21 +87,19 @@
                 </div>
             </div>
         </div>
-
+        <!-- INSTRUCTION END -->
     </div>
 
     <div id="game" class="d-none">
         <a href="index.html" id="lobby-btn" class="d-none"> <button title="Back to Home" class="lobby">LOBBY</button>
         </a>
         <img id="info-btn-close" onclick="closeHelpInfo()" title="Close" src="img/close.png">
-        <!-- <img onclick="loadGame()" id="restart-btn" class="d-none" src="img/play.png" title="New Game"> -->
         <img id="info-btn-open" class="d-none" onclick="showHelpInfo()" title="Info" src="img/help.png">
 
+        <!-- INFO-BAR IN GAME -->
         <div id="infobar">
-
             <div class="music-box">
                 <img id="audio-img" onmouseover="showMusicSet()" src="img/music.png">
-                <!-- loop => repeat music; controls => setting-box for play/stop music -->
                 <audio loop class="audio d-none" onmouseout="hiddeMusicSet()" id="audio" src="../audio/background.mp3"
                     controls></audio>
             </div>
@@ -122,11 +120,10 @@
                 <img class="info-key-space" src="img/botones/key/Space Bar key.png">
                 <img class="info-img" src="img/sharkie/attack/fin_slap/PreviewOP2.gif">
             </div>
-
         </div>
+        <!-- INFO-BAR IN GAME END-->
 
-        <canvas id="canvas" width="720px" height="480px">
-            <!-- Bei canvas muss die width/height immer inline geschrieben werden, nicht in style.css -->
+        <canvas id="canvas" width="720px" height="480px"> <!-- Bei canvas muss die width/height immer inline geschrieben werden, nicht in style.css -->
         </canvas>
     </div>
 </body>
