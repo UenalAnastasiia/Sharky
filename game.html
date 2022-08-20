@@ -36,24 +36,27 @@
     <!-- JavaScript Libraries -->
     <script src="levels/level1.js"></script>
     <script src="js/game.js"></script>
-
-
 </head>
 
 <body onload="init()">
-    <img id="info-btn-open" onclick="showHelpInfo()" title="Game-Info" src="img/help.png">
-    <a href="game.html"><img id="restart-btn" src="img/play.png" title="New Game"></a>
-    <img id="info-btn-close" class="d-none" onclick="closeHelpInfo()" title="Close" src="img/close.png">
-    <div id="infobar" class="d-none">
-        <div class="info-box margin-24">
-            <img class="info-coin" src="img/marcadores/coins/3.png">
-            <span>Collect the coins to attack with Bubble</span>
+    <a href="index.html" id="lobby-btn" class="d-none"> <button class="lobby">LOBBY</button> </a>
+    <img id="info-btn-close" onclick="closeHelpInfo()" title="Close" src="img/close.png">
+    <a href="game.html"> <img id="restart-btn" class="d-none" src="img/play.png" title="New Game"> </a>
+    <img id="info-btn-open" class="d-none" onclick="showHelpInfo()" title="Info" src="img/help.png">
+    <div id="infobar">
+        <div class="music-box">
+            <img id="audio-img" onmouseover="showMusicSet()" src="img/music.png">
+            <audio class="audio d-none" onmouseout="hiddeMusicSet()" id="audio" src="../audio/background.mp3" controls></audio>
         </div>
-        <div class="info-box margin-24">
+        <div class="info-box margin-8">
+            <img class="info-coin" src="img/marcadores/coins/3.png">
+            <span>Collect the coins <br> to attack with Bubble</span>
+        </div>
+        <div class="info-box margin-8">
             <img class="info-key-arrow" src="img/botones/key/arrow keys.png">
             <img class="info-img" src="img/sharkie/swim/swimm.gif">
         </div>
-        <div class="info-box margin-24">
+        <div class="info-box margin-8">
             <img class="info-key-D" src="img/botones/key/D key.png">
             <img class="info-img" src="img/sharkie/attack/bubble_trap/op1_with_bubble/Preview.gif">
         </div>

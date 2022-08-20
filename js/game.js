@@ -6,16 +6,17 @@ let keyboard = new Keyboard();
 function init() {
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
-
     console.log('My Character is', world.character);
 }
 
 
-function backgroundMusic() {
-    let audio = new Audio('../audio/background.mp3');
-    audio.play();
+function showMusicSet() {
+    document.getElementById('audio').classList.remove('d-none');
 }
 
+function hiddeMusicSet() {
+    document.getElementById('audio').classList.add('d-none');
+}
 
 /**
  * Show Infobar 
@@ -23,6 +24,7 @@ function backgroundMusic() {
 function showHelpInfo() {
     document.getElementById('info-btn-open').classList.add('d-none');
     document.getElementById('restart-btn').classList.add('d-none');
+    document.getElementById('lobby-btn').classList.add('d-none');
     document.getElementById('info-btn-close').classList.remove('d-none');
     document.getElementById('infobar').classList.remove('d-none');
 }
@@ -31,6 +33,7 @@ function showHelpInfo() {
 function closeHelpInfo() {
     document.getElementById('info-btn-open').classList.remove('d-none');
     document.getElementById('restart-btn').classList.remove('d-none');
+    document.getElementById('lobby-btn').classList.remove('d-none');
     document.getElementById('info-btn-close').classList.add('d-none');
     document.getElementById('infobar').classList.add('d-none');
 }
@@ -100,57 +103,3 @@ window.addEventListener("keyup", (event) => {
     // Cancel the default action to avoid it being handled twice
     event.preventDefault();
 }, false);
-
-
-/* document.addEventListener("keydown", (event) => {
-    if(event.key == "ArrowRight") {
-        keyboard.KEY_RIGHT = true;
-    }
-
-    if(event.key == "ArrowLeft") {
-        keyboard.KEY_LEFT = true;
-    }
-
-    if(event.key == "ArrowDown") {
-        keyboard.KEY_DOWN = true;
-    }
-
-    if(event.key == "ArrowUp") {
-        keyboard.KEY_UP = true;
-    }
-
-    if(event.key === ' ') {
-        keyboard.KEY_SPACE = true;
-    } 
-
-    if(event.key === "d") {
-        keyboard.KEY_D = true;
-    } 
-});
-
-
-document.addEventListener("keyup", (event) => {
-    if(event.key == "ArrowRight") {
-        keyboard.KEY_RIGHT = false;
-    }
-
-    if(event.key == "ArrowLeft") {
-        keyboard.KEY_LEFT = false;
-    }
-
-    if(event.key == "ArrowDown") {
-        keyboard.KEY_DOWN = false;
-    }
-
-    if(event.key == "ArrowUp") {
-        keyboard.KEY_UP = false;
-    }
-
-    if(event.key === ' ') {
-        keyboard.KEY_SPACE = false;
-    } 
-
-    if(event.key === "KeyD") {
-        keyboard.KEY_D = false;
-    } 
-}); */
