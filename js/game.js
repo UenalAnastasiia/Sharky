@@ -18,16 +18,30 @@ function init() {
 }
 
 
-/* RULES */
+/* INSTRUCTION */
 function RulesModal() {
     if (modal === false) {
-      document.getElementById("popUpBox").style.display = "block";
-      modal = true;
+        document.getElementById("popUpBox").style.display = "block";
+        modal = true;
     } else {
-      document.getElementById("popUpBox").style.display = "none";
-      modal = false;
+        document.getElementById("popUpBox").style.display = "none";
+        modal = false;
     }
-  }
+}
+
+
+/* FULL SCREEN */
+let elem = document.documentElement;
+function openFullscreen() {
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+    }
+}
+
 
 /**
  * Show Music settings in Infobar to play or stop background music

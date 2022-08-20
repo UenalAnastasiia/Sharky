@@ -271,7 +271,7 @@ h1 {
     box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
 }
 
-#info-btn-open:hover, #info-btn-close:hover, #restart-btn:hover {
+#info-btn-open:hover, #info-btn-close:hover, #restart-btn:hover, .fullscreen-box:hover {
     cursor: pointer;
     background-color: white;
 }
@@ -290,7 +290,11 @@ h1 {
     box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
 }
 
-.music-box {
+.fullscreen-box {
+    top: 72px !important;
+}
+
+.music-box, .fullscreen-box {
     position: absolute;
     left: 16px;
     top: 24px;
@@ -306,11 +310,11 @@ h1 {
 .music-box audio {
     height: 24px;
     width: 220px;
+    margin-left: 4px;
 }
 
-.music-box img {
+.music-box img, .fullscreen-img {
     height: 18px;
-    margin-right: 4px;
 }
 
 .music-box img:hover {
