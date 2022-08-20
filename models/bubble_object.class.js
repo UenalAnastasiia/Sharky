@@ -11,16 +11,16 @@ class BubbleObject extends MovableObject {
 
     }
 
+    
     throwUpBubble() {
         this.speedY = 10;
-        // this.applyGravity();
-        if (keyboard.KEY_RIGHT) {
+        if (keyboard.KEY_LEFT) {
             setInterval(() => {
-                this.x += 10;
+                this.x -= 10;
             }, 25);
         } else {
             setInterval(() => {
-                this.x -= 10;
+                this.x += 10;
             }, 25);
         }
     }

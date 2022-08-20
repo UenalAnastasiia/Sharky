@@ -19,6 +19,43 @@ body {
     display: none !important;
 }
 
+.margin-16 {
+    margin-right: 16px;
+}
+
+.margin-8 {
+    margin-right: 8px;
+}
+
+.margin-48 {
+    margin-right: 48px;
+}
+
+.bg-white {
+    background: white !important;
+} 
+
+canvas {
+    border: 6px solid white;
+    box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+/* START-PAGE */
+
+.rules-img {
+    padding: 2px;
+    background: #ffffffa6;
+    border-radius: 100%;
+    border: 2px solid white;
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    height: 48px;
+    box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
+}
+
 #start-page {
     display: flex;
     flex-direction: column;
@@ -39,7 +76,7 @@ body {
     filter: drop-shadow(0px 0px 20px #9e9ec9);
 }
 
-.start-btn:hover {
+.start-btn:hover, .rules-img:hover, .popUpBtn:hover {
     cursor: pointer;
     transform: scale(1.1);
     transition: 225ms ease-in-out;
@@ -54,12 +91,133 @@ h1 {
     filter: drop-shadow(0px 0px 20px  #9e9ec9);  
 }
 
-canvas {
-    border: 6px solid white;
-    box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
-    border-radius: 10px;
-    margin-top: 25px;
+/* START-PAGE END*/
+
+/* Modal Popup Box */
+
+#popUpBox {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(203 200 200 / 60%);
+    z-index: 9999;
 }
+  
+.popUpWindow {
+    background: radial-gradient(rgb(201 193 220), rgb(90 0 193));
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 24px;
+    overflow-y: overlay;
+    text-align: center;
+}
+  
+#popUpBox span {
+    color: white;
+    font-size: 18px;
+    display: block;
+}
+  
+#popUpBox h1 {
+    color: white;
+}
+  
+.popUpMargin {
+    margin-right: 12px;
+}
+  
+.popUpBtn {
+    font-size: 18px;
+    color: white;
+    padding: 6px;
+    cursor: pointer;
+    background: rgb(13 13 25 / 24%);
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid white;
+    text-decoration: none;
+    position: absolute;
+    top: 12px;
+    right: 24px;
+}
+
+.instruction {
+    color: white;
+    margin-top: 36px;
+    font-size: 52px;
+}
+
+.key-rules-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 36px;
+    padding: 8px;
+    border: 2px solid white;
+    border-radius: 24px;
+    max-width: 500px;
+    background: rgb(13 13 25 / 24%);
+}
+
+.rule {
+    display: flex;
+    justify-content: space-around;
+}
+
+.key-rules-img {
+    height: 120px;
+    width: 120px;
+    margin-top: -25px;
+}
+
+.key-arrow {
+    height: 70px;
+    width: 120px;
+}
+
+.key-D {
+    height: 60px;
+    width: 60px;
+}
+
+.key-space {
+    height: 40px;
+    width: 160px;
+}
+
+.rules-coin {
+    height: 60px;
+    width: 60px;
+    margin-right: 12px;
+}
+
+.enemies-header {
+    font-size: 36px;
+    color: white;
+}
+
+.enemie-rules-img-80 {
+    height: 80px;
+    width: 80px; 
+}
+
+.enemie-rules-img {
+    height: 120px;
+    width: 120px; 
+}
+
+
+/* Modal Popup Box */
 
 /* INFO-BAR */
 
@@ -130,10 +288,6 @@ canvas {
     right: 0;
     width: calc(100% - 16px);
     box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
-}
-
-.margin-8 {
-    margin-right: 8px;
 }
 
 .music-box {

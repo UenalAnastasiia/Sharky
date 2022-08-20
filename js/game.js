@@ -1,21 +1,33 @@
 let canvas;
 let world;
 let keyboard = new Keyboard();
+let modal = false;
+
+
+function loadGame() {
+    document.getElementById('game').classList.remove('d-none');
+    document.getElementById('start-page').classList.add('d-none');
+    init();
+}
 
 
 function init() {
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
     console.log('My Character is', world.character);
-    loadGame();
 }
 
 
-function loadGame() {
-    document.getElementById('game').classList.remove('d-none');
-    document.getElementById('start-page').classList.add('d-none');
-}
-
+/* RULES */
+function RulesModal() {
+    if (modal === false) {
+      document.getElementById("popUpBox").style.display = "block";
+      modal = true;
+    } else {
+      document.getElementById("popUpBox").style.display = "none";
+      modal = false;
+    }
+  }
 
 /**
  * Show Music settings in Infobar to play or stop background music

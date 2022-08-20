@@ -40,13 +40,59 @@
 
 <body>
     <div id="start-page">
+        <img onclick="RulesModal()" class="rules-img" src="img/rules.png">
         <h1>Underwater World from Sharky</h1>
         <!-- <img onclick="init()" class="start-img" src="img/botones/start/1.png"> -->
-        <button class="start-btn" onclick="init()">START</button>
+        <button class="start-btn" onclick="loadGame()">START</button>
+
+        <div class="popUpBox" id="popUpBox">
+            <div class="popUpWindow">
+                <button class="popUpBtn" onclick="RulesModal()">X</button>
+                <h2 class="instruction">Instruction</h2>
+                <div class="key-rules">
+                    <div class="rule">
+                        <div class="key-rules-box">
+                            <img class="rules-coin" src="img/marcadores/coins/3.png">
+                            <span>Collect the coins <br> to attack with Bubble</span>
+                        </div>
+                        <div class="key-rules-box">
+                            <img class="rules-coin" src="img/heart.png">
+                            <span>Collect the hearts <br> to health you</span>
+                        </div>
+                    </div>
+
+                    <div class="rule">
+                        <div class="key-rules-box margin-16">
+                            <img class="key-arrow" src="img/botones/key/arrow keys.png">
+                            <img class="key-rules-img" src="img/sharkie/swim/swimm.gif">
+                        </div>
+                        <div class="key-rules-box margin-16">
+                            <img class="key-D" src="img/botones/key/D key.png">
+                            <img class="key-rules-img" src="img/sharkie/attack/bubble_trap/op1_with_bubble/Preview.gif">
+                        </div>
+                        <div class="key-rules-box">
+                            <img class="key-space" src="img/botones/key/Space Bar key.png">
+                            <img class="key-rules-img" src="img/sharkie/attack/fin_slap/PreviewOP2.gif">
+                        </div>
+                    </div>
+
+                    <h2 class="enemies-header">ENEMIES</h2>
+                    <div class="rule">
+                        <div class="key-rules-box bg-white">
+                            <img class="enemie-rules-img-80 margin-48" src="img/enemy/jelly_fish/jelly.gif">
+                            <img class="enemie-rules-img-80 margin-48" src="img/enemy/puffer_fish/bubbleeswim/Preview.gif">
+                            <img class="enemie-rules-img" src="img/enemy/final_enemy/Preview.gif">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <div id="game" class="d-none">
-        <a href="index.html" id="lobby-btn" class="d-none"> <button class="lobby">LOBBY</button> </a>
+        <a href="index.html" id="lobby-btn" class="d-none"> <button title="Back to Home" class="lobby">LOBBY</button>
+        </a>
         <img id="info-btn-close" onclick="closeHelpInfo()" title="Close" src="img/close.png">
         <!-- <img onclick="loadGame()" id="restart-btn" class="d-none" src="img/play.png" title="New Game"> -->
         <img id="info-btn-open" class="d-none" onclick="showHelpInfo()" title="Info" src="img/help.png">
@@ -56,7 +102,8 @@
             <div class="music-box">
                 <img id="audio-img" onmouseover="showMusicSet()" src="img/music.png">
                 <!-- loop => repeat music; controls => setting-box for play/stop music -->
-                <audio loop class="audio d-none" onmouseout="hiddeMusicSet()" id="audio" src="../audio/background.mp3" controls></audio>
+                <audio loop class="audio d-none" onmouseout="hiddeMusicSet()" id="audio" src="../audio/background.mp3"
+                    controls></audio>
             </div>
 
             <div class="info-box margin-8">
