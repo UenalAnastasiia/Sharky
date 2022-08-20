@@ -7,6 +7,13 @@ function init() {
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
     console.log('My Character is', world.character);
+    loadGame();
+}
+
+
+function loadGame() {
+    document.getElementById('game').classList.remove('d-none');
+    document.getElementById('start-page').classList.add('d-none');
 }
 
 
@@ -27,7 +34,6 @@ function hiddeMusicSet() {
  */
 function showHelpInfo() {
     document.getElementById('info-btn-open').classList.add('d-none');
-    document.getElementById('restart-btn').classList.add('d-none');
     document.getElementById('lobby-btn').classList.add('d-none');
     document.getElementById('info-btn-close').classList.remove('d-none');
     document.getElementById('infobar').classList.remove('d-none');
@@ -36,7 +42,6 @@ function showHelpInfo() {
 
 function closeHelpInfo() {
     document.getElementById('info-btn-open').classList.remove('d-none');
-    document.getElementById('restart-btn').classList.remove('d-none');
     document.getElementById('lobby-btn').classList.remove('d-none');
     document.getElementById('info-btn-close').classList.add('d-none');
     document.getElementById('infobar').classList.add('d-none');

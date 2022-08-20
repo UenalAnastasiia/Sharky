@@ -6,16 +6,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sharky</title>
-    <link rel="stylesheet" href="start.css">
-    <!-- <script defer src="js/game.js"></script> -->
+    <!-- Style Libraries-->
+    <link rel="stylesheet" href="style.css">
+    <!-- JSON -->
+    <script src="js/images_character.js"></script>
+    <script src="js/images_enemies.js"></script>
+    <script src="js/images_bar.js"></script>
+    <!-- Models -->
+    <script src="models/drawable_object.class.js"></script>
+    <script src="models/moveble_object.class.js"></script>
+    <script src="models/statusbar_life.class.js"></script>
+    <script src="models/statusbar_coin.class.js"></script>
+    <script src="models/world.class.js"></script>
+    <script src="models/character.class.js"></script>
+    <script src="models/coins_object.class.js"></script>
+    <script src="models/keyboard.class.js"></script>
+    <script src="models/level.class.js"></script>
+    <script src="models/background_objects/background_object.class.js"></script>
+    <script src="models/background_objects/sunlight.class.js"></script>
+    <script src="models/background_objects/barrier_horizontal.class.js"></script>
+    <script src="models/background_objects/barrier_vertikal.class.js"></script>
+    <script src="models/enemies/fish_puffer_red.class.js"></script>
+    <script src="models/enemies/fish_puffer_green.class.js"></script>
+    <script src="models/enemies/jelly_dangerous.class.js"></script>
+    <script src="models/enemies/jelly_regular.class.js"></script>
+    <script src="models/enemies/endboss.class.js"></script>
+    <script src="models/bubble_object.class.js"></script>
+    <script src="models/life_object.class.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="levels/level1.js"></script>
+    <script src="js/game.js"></script>
 </head>
 
-
 <body>
-    <h1>Underwater World from Sharky</h1>
-    <a href="game.html"><img class="start-img" src="img/botones/start/1.png"></a>
+    <div id="start-page">
+        <h1>Underwater World from Sharky</h1>
+        <!-- <img onclick="init()" class="start-img" src="img/botones/start/1.png"> -->
+        <button class="start-btn" onclick="init()">START</button>
+    </div>
 
+    <div id="game" class="d-none">
+        <a href="index.html" id="lobby-btn" class="d-none"> <button class="lobby">LOBBY</button> </a>
+        <img id="info-btn-close" onclick="closeHelpInfo()" title="Close" src="img/close.png">
+        <!-- <img onclick="loadGame()" id="restart-btn" class="d-none" src="img/play.png" title="New Game"> -->
+        <img id="info-btn-open" class="d-none" onclick="showHelpInfo()" title="Info" src="img/help.png">
 
+        <div id="infobar">
+
+            <div class="music-box">
+                <img id="audio-img" onmouseover="showMusicSet()" src="img/music.png">
+                <!-- loop => repeat music; controls => setting-box for play/stop music -->
+                <audio loop class="audio d-none" onmouseout="hiddeMusicSet()" id="audio" src="../audio/background.mp3" controls></audio>
+            </div>
+
+            <div class="info-box margin-8">
+                <img class="info-coin" src="img/marcadores/coins/3.png">
+                <span>Collect the coins <br> to attack with Bubble</span>
+            </div>
+            <div class="info-box margin-8">
+                <img class="info-key-arrow" src="img/botones/key/arrow keys.png">
+                <img class="info-img" src="img/sharkie/swim/swimm.gif">
+            </div>
+            <div class="info-box margin-8">
+                <img class="info-key-D" src="img/botones/key/D key.png">
+                <img class="info-img" src="img/sharkie/attack/bubble_trap/op1_with_bubble/Preview.gif">
+            </div>
+            <div class="info-box">
+                <img class="info-key-space" src="img/botones/key/Space Bar key.png">
+                <img class="info-img" src="img/sharkie/attack/fin_slap/PreviewOP2.gif">
+            </div>
+
+        </div>
+
+        <canvas id="canvas" width="720px" height="480px">
+            <!-- Bei canvas muss die width/height immer inline geschrieben werden, nicht in style.css -->
+        </canvas>
+    </div>
 </body>
 
 </html>
