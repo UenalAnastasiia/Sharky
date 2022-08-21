@@ -52,8 +52,8 @@ class DrawableObject {
                     if (this instanceof BarrierHorizontalObject) {
                         this.drawFrameBarrierHorizont(ctx);
                     } else
-                    if (this instanceof BubbleObject) {
-                        this.drawFrameBubble(ctx);
+                    if (this instanceof BubbleObject || this instanceof CoinsObject || this instanceof LifeObject) {
+                        this.drawFrameObjects(ctx);
                     }
     }
 
@@ -75,10 +75,10 @@ class DrawableObject {
         ctx.stroke();
     }
 
-    drawFrameBubble(ctx) {
+    drawFrameObjects(ctx) {
         ctx.beginPath();
         ctx.lineWidth = '3';
-        ctx.strokeStyle = 'grey';
+        ctx.strokeStyle = 'orange';
         ctx.rect(this.x, this.y, this.width, this.height);
         ctx.stroke();
     }

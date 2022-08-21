@@ -8,6 +8,8 @@ class MovableObject extends DrawableObject {
     energy = 100;
     lastHit = 0;
     currentImage = 0;
+    collectedCoins = 0;
+    coins = 0;
 
 
     /**
@@ -91,16 +93,23 @@ class MovableObject extends DrawableObject {
      */
     isDead() {
         return this.energy == 0;
-
     }
 
-    // showGameOverScreen() {
-    //     if (this.energy == 0) {
-    //         setTimeout(() => {
-    //             this.loadImage('../img/botones/titles/game_over/Recurso 11.png');
-    //         }, 2000);
-            
-    //     }
-    // }
+
+    collectCoin() {
+        this.collectedCoins += 20;
+        if (this.collectedCoins > 100) {
+            this.collectedCoins = 100;
+        } else {
+            this.coins = new Date().getTime();
+        }
+    }
+
+    isCollectedCoin() {
+        let timepassed = new Date().getTime() - this.coins;   // Differenz in ms
+        timepassed = timepassed / 1000; // Differenz in Sec
+        return timepassed < 1;
+    }
+
 
 }

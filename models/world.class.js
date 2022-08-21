@@ -129,20 +129,38 @@ class World {
     check() {
         setInterval(() => {
             this.checkCollisionsWithEnemies();
+            this.checkCollisionsWithCoins();
             this.checkThrowUpBubble();
-        }, 100);
+        }, 200);
     }
 
 
     checkCollisionsWithEnemies() {
         this.level.enemies.forEach((enemy) => {
             if (this.character.isColliding(enemy)) {
-                this.character.hit();
-                new Audio('audio/hurt.mp3').play();
-                this.statusBar_life.setPercentage(this.character.energy)
+                this.collidingWithEnemie();
                 // console.log('Collision with Character, energy ', this.character.energy);
             }
         });
+    }
+
+
+    checkCollisionsWithCoins() {
+        this.level.coinsObject.forEach((coin) => {
+            if (this.character.isColliding(coin)) {
+                this.character.collectCoin();
+                this.statusBar_coin.setPercentage(this.character.collectedCoins);
+                this.spliceCoin();
+            }
+        });
+    }
+
+
+    spliceCoin() {
+        // Muss noch überarbeitet werden, da einige Coins direkt gelöscht werden
+        for (let i = 0; i < this.level.coinsObject.length; i++) {
+            Array.prototype.splice.call(this.level.coinsObject, i, 1);
+        }
     }
 
 
@@ -152,5 +170,12 @@ class World {
             this.bubbleObject.push(bubble);
             // this.character.characterBubbleThrowUp(this.character.x, this.character.y, this.character.width, this.character.height);
         }
+    }
+
+
+    collidingWithEnemie() {
+        this.character.hit();
+        new Audio('audio/hurt.mp3').play();
+        this.statusBar_life.setPercentage(this.character.energy);
     }
 }

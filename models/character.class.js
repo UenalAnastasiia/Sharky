@@ -39,6 +39,9 @@ class Character extends MovableObject {
                 setTimeout(() => {
                     showGameOverScreen();
                 }, 2000);
+            } else if (this.isCollectedCoin()) {
+                // delete coin
+                this.swimmingAnimation(CHARACTER_IMAGES.BUBBLEATTACK);
             } else if (this.isHurt()) {
                 this.swimmingAnimation(CHARACTER_IMAGES.HURT);
             } else if (this.world.keyboard.KEY_SPACE) {
