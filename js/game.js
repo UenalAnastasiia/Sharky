@@ -9,6 +9,7 @@ function loadGame() {
     document.getElementById('game').classList.remove('d-none');
     document.getElementById('start-page').classList.add('d-none');
     document.getElementById('audio-start').pause();
+    document.getElementById('audio').play();
     init();
 }
 

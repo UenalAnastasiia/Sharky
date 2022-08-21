@@ -12,6 +12,7 @@ class Character extends MovableObject {
         this.loadImages(CHARACTER_IMAGES.ATTACK);
         this.loadImages(CHARACTER_IMAGES.DEAD);
         this.loadImages(CHARACTER_IMAGES.HURT);
+        this.loadImages(CHARACTER_IMAGES.BUBBLEATTACK);
         this.applyGravity();
         this.animate();
     }
@@ -105,6 +106,6 @@ class Character extends MovableObject {
 
 
     characterBubbleThrowUp() {
-        this.swimmingAnimation(CHARACTER_IMAGES.ATTACK);
+        this.swimmingAnimation(CHARACTER_IMAGES.BUBBLEATTACK);
     }
 }
