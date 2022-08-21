@@ -8,6 +8,7 @@ let fullscreenWindow = false;
 function loadGame() {
     document.getElementById('game').classList.remove('d-none');
     document.getElementById('start-page').classList.add('d-none');
+    document.getElementById('audio-start').pause();
     init();
 }
 
@@ -45,10 +46,12 @@ function fullScreenModus() {
  */
 function showMusicSet() {
     document.getElementById('audio').classList.remove('d-none');
+    document.getElementById('audio-start').classList.remove('d-none');
 }
 
 function hideMusicSet() {
     document.getElementById('audio').classList.add('d-none');
+    document.getElementById('audio-start').classList.add('d-none');
 }
 
 function showFullscreenName() {
