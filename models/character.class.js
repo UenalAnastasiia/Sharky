@@ -28,9 +28,17 @@ class Character extends MovableObject {
             this.world.camera_x = -this.x + 10;
         }, 1000 / 60);
 
+        this.intervalAnimations();
+    }
+
+
+    intervalAnimations() {
         setInterval(() => {
             if (this.isDead()) {
                 this.swimmingAnimation(CHARACTER_IMAGES.DEAD);
+                setTimeout(() => {
+                    showGameOverScreen();
+                }, 2000);
             } else if (this.isHurt()) {
                 this.swimmingAnimation(CHARACTER_IMAGES.HURT);
             } else if (this.world.keyboard.KEY_SPACE) {

@@ -128,16 +128,17 @@ class World {
 
     check() {
         setInterval(() => {
-            this.checkCollisions();
+            this.checkCollisionsWithEnemies();
             this.checkThrowUpBubble();
-        }, 200);
+        }, 100);
     }
 
 
-    checkCollisions() {
+    checkCollisionsWithEnemies() {
         this.level.enemies.forEach((enemy) => {
             if (this.character.isColliding(enemy)) {
                 this.character.hit();
+                new Audio('audio/hurt.mp3').play();
                 this.statusBar_life.setPercentage(this.character.energy)
                 // console.log('Collision with Character, energy ', this.character.energy);
             }

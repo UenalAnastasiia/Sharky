@@ -51,6 +51,9 @@ class DrawableObject {
                 } else
                     if (this instanceof BarrierHorizontalObject) {
                         this.drawFrameBarrierHorizont(ctx);
+                    } else
+                    if (this instanceof BubbleObject) {
+                        this.drawFrameBubble(ctx);
                     }
     }
 
@@ -68,6 +71,14 @@ class DrawableObject {
         ctx.beginPath();
         ctx.lineWidth = '3';
         ctx.strokeStyle = 'blue';
+        ctx.rect(this.x, this.y, this.width, this.height);
+        ctx.stroke();
+    }
+
+    drawFrameBubble(ctx) {
+        ctx.beginPath();
+        ctx.lineWidth = '3';
+        ctx.strokeStyle = 'grey';
         ctx.rect(this.x, this.y, this.width, this.height);
         ctx.stroke();
     }

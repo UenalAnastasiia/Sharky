@@ -3,6 +3,7 @@ let world;
 let keyboard = new Keyboard();
 let modal = false;
 let fullscreenWindow = false;
+let gameEnd;
 
 
 function loadGame() {
@@ -83,6 +84,24 @@ function closeHelpInfo() {
     document.getElementById('lobby-btn').classList.remove('d-none');
     document.getElementById('info-btn-close').classList.add('d-none');
     document.getElementById('infobar').classList.add('d-none');
+}
+
+
+/**
+ * Show Game Over Screen, if Character is dead and go back to lobby
+ */
+function showGameOverScreen() {
+    if (gameEnd = 'GameOver') {
+        document.getElementById('audio').pause();
+        new Audio('audio/hurt.mp3').pause();
+        document.getElementById('gameover-img').classList.remove('d-none');
+        document.getElementById('game').classList.add('d-none');
+        document.getElementById('audio-gameover').play();
+
+        setTimeout(() => {
+            window.location.replace("index.html");
+        }, 1500);
+    }
 }
 
 

@@ -65,7 +65,7 @@ class MovableObject extends DrawableObject {
 
 
     hit() {
-        this.energy -= 1;
+        this.energy -= 5;
         if (this.energy < 0) {
             this.energy = 0;
         } else {
@@ -91,6 +91,16 @@ class MovableObject extends DrawableObject {
      */
     isDead() {
         return this.energy == 0;
+
     }
+
+    // showGameOverScreen() {
+    //     if (this.energy == 0) {
+    //         setTimeout(() => {
+    //             this.loadImage('../img/botones/titles/game_over/Recurso 11.png');
+    //         }, 2000);
+            
+    //     }
+    // }
 
 }

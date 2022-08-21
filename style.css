@@ -385,3 +385,13 @@ h1 {
 
 /* INFO-BAR END */
 
+/* GAME OVER SCREEN */
+
+.gameover-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 50vh;
+}
+
