@@ -22,7 +22,7 @@ class CoinsObject extends MovableObject {
     coinsPosition() {
         if (this.x < 2880 || this.y < 330) {
             this.x = 800 + Math.random() * 1500;
-            this.y = 20 + Math.random() * 400;         // Math.random() gibt eine zufällige Zahl zwischen 0 und 1 
+            this.y = 20 + Math.random() * 400; 
         }
     }
 }

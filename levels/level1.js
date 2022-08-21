@@ -75,5 +75,4 @@ const level1 = new Level(
         new LifeObject(),
         new LifeObject()
     ]
-
 );

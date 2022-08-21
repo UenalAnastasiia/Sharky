@@ -16,11 +16,13 @@ function loadGame() {
 function init() {
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
-    console.log('My Character is', world.character);
+    // console.log('My Character is', world.character);
 }
 
 
-/* INSTRUCTION */
+/**
+ * Show Instruction Windoww
+ */
 function RulesModal() {
     if (modal === false) {
         document.getElementById("popUpBox").style.display = "block";
@@ -41,8 +43,17 @@ function fullScreenModus() {
 }
 
 
+function showFullscreenName() {
+    document.getElementById('fullscreen-span').classList.remove('d-none');
+}
+
+function hideFullscreenName() {
+    document.getElementById('fullscreen-span').classList.add('d-none');
+}
+
+
 /**
- * Show Music settings in Infobar to play or stop background music
+ * Show Music settings to play or stop background music
  */
 function showMusicSet() {
     document.getElementById('audio').classList.remove('d-none');
@@ -54,17 +65,9 @@ function hideMusicSet() {
     document.getElementById('audio-start').classList.add('d-none');
 }
 
-function showFullscreenName() {
-    document.getElementById('fullscreen-span').classList.remove('d-none');
-}
-
-function hideFullscreenName() {
-    document.getElementById('fullscreen-span').classList.add('d-none');
-}
-
 
 /**
- * Show Infobar 
+ * Show Infobar in the Game
  */
 function showHelpInfo() {
     document.getElementById('info-btn-open').classList.add('d-none');
@@ -121,7 +124,7 @@ window.addEventListener("keyup", (event) => {
     if (event.defaultPrevented) {
         return;
     }
-
+    
     switch (event.key) {
         case "ArrowRight":
             keyboard.KEY_RIGHT = false;
@@ -142,8 +145,7 @@ window.addEventListener("keyup", (event) => {
             keyboard.KEY_D = false;
             break;
         default:
-            return; // Quit when this doesn't handle the key event.
+            return;
     }
-    // Cancel the default action to avoid it being handled twice
     event.preventDefault();
 }, false);
