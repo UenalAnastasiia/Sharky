@@ -80,7 +80,8 @@
                     <div class="rule">
                         <div class="key-rules-box bg-white">
                             <img class="enemie-rules-img-80 margin-48" src="img/enemy/jelly_fish/jelly.gif">
-                            <img class="enemie-rules-img-80 margin-48" src="img/enemy/puffer_fish/bubbleeswim/Preview.gif">
+                            <img class="enemie-rules-img-80 margin-48"
+                                src="img/enemy/puffer_fish/bubbleeswim/Preview.gif">
                             <img class="enemie-rules-img" src="img/enemy/final_enemy/Preview.gif">
                         </div>
                     </div>
@@ -98,27 +99,32 @@
 
         <!-- INFO-BAR IN GAME -->
         <div id="infobar">
-            <div class="music-box">
-                <img id="audio-img" onmouseover="showMusicSet()" src="img/music.png">
-                <audio loop class="audio d-none" onmouseout="hiddeMusicSet()" id="audio" src="../audio/background.mp3"
-                    controls></audio>
+            <div class="music-box" onmouseover="showMusicSet()" onmouseout="hideMusicSet()">
+                <img id="audio-img" src="img/music.png">
+                <audio loop class="audio d-none" id="audio" src="../audio/background.mp3" controls></audio>
             </div>
-            <div class="fullscreen-box">
-                <img class="fullscreen-img" onclick="openFullscreen()" src="img/fullscreen.png">
+
+            <div onclick="fullScreenModus()" class="fullscreen-box" onmouseover="showFullscreenName()"
+                onmouseout="hideFullscreenName()">
+                <img id="fullscreenChange" class="fullscreen-img" src="img/fullscreen.png">
+                <span id="fullscreen-span" class="d-none">Fullscreen</span>
             </div>
 
             <div class="info-box margin-8">
                 <img class="info-coin" src="img/marcadores/coins/3.png">
                 <span>Collect the coins <br> to attack with Bubble</span>
             </div>
+
             <div class="info-box margin-8">
                 <img class="info-key-arrow" src="img/botones/key/arrow keys.png">
                 <img class="info-img" src="img/sharkie/swim/swimm.gif">
             </div>
+
             <div class="info-box margin-8">
                 <img class="info-key-D" src="img/botones/key/D key.png">
                 <img class="info-img" src="img/sharkie/attack/bubble_trap/op1_with_bubble/Preview.gif">
             </div>
+
             <div class="info-box">
                 <img class="info-key-space" src="img/botones/key/Space Bar key.png">
                 <img class="info-img" src="img/sharkie/attack/fin_slap/PreviewOP2.gif">
@@ -126,7 +132,8 @@
         </div>
         <!-- INFO-BAR IN GAME END-->
 
-        <canvas id="canvas" width="720px" height="480px"> <!-- Bei canvas muss die width/height immer inline geschrieben werden, nicht in style.css -->
+        <canvas id="canvas" width="720px" height="480px">
+            <!-- Bei canvas muss die width/height immer inline geschrieben werden, nicht in style.css -->
         </canvas>
     </div>
 </body>

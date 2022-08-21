@@ -294,6 +294,10 @@ h1 {
     top: 72px !important;
 }
 
+.fullscreen-box span {
+    margin-left: 8px;
+}
+
 .music-box, .fullscreen-box {
     position: absolute;
     left: 16px;
