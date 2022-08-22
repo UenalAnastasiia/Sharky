@@ -42,17 +42,13 @@ class DrawableObject {
     drawFrame(ctx) {
         if (this instanceof Character) {
             this.drawFrameCharacter(ctx);
-        } else
-            if (this instanceof Fish_Puffer_Green || this instanceof Fish_Puffer_Red || this instanceof Jelly_Dangerous || this instanceof Jelly_Regular) {
+        } else if (this instanceof Fish_Puffer_Green || this instanceof Fish_Puffer_Red || this instanceof Jelly_Dangerous || this instanceof Jelly_Regular) {
                 this.drawFrameEnemies(ctx);
-            } else
-                if (this instanceof Endboss) {
+            } else if (this instanceof Endboss) {
                     this.drawFrameEndboss(ctx);
-                } else
-                    if (this instanceof BarrierHorizontalObject) {
+                } else if (this instanceof BarrierHorizontalObject) {
                         this.drawFrameBarrierHorizont(ctx);
-                    } else
-                    if (this instanceof BubbleObject || this instanceof CoinsObject || this instanceof LifeObject) {
+                    } else if (this instanceof BubbleObject || this instanceof CoinsObject || this instanceof LifeObject) {
                         this.drawFrameObjects(ctx);
                     }
     }
@@ -75,6 +71,9 @@ class DrawableObject {
         ctx.stroke();
     }
 
+
+
+    
     drawFrameObjects(ctx) {
         ctx.beginPath();
         ctx.lineWidth = '3';

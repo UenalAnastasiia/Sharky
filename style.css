@@ -93,7 +93,7 @@ h1 {
 
 /* START-PAGE END*/
 
-/* MODAL POPUP BOX */
+/* MODAL POPUP BOX - INSTRUCTION */
 
 #popUpBox {
     display: none;
@@ -208,6 +208,13 @@ h1 {
     height: 60px;
     width: 60px;
     margin-right: 12px;
+}
+
+.rules-heart {
+    height: 40px;
+    width: 40px;
+    margin-right: 12px;
+    margin-left: 6px;
 }
 
 .enemies-header {
