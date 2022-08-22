@@ -146,21 +146,13 @@ class World {
 
 
     checkCollisionsWithCoins() {
-        this.level.coinsObject.forEach((coin) => {
+        this.level.coinsObject.forEach((coin, index) => {
             if (this.character.isColliding(coin)) {
                 this.character.collectCoin();
                 this.statusBar_coin.setPercentage(this.character.collectedCoins);
-                this.spliceCoin();
+                this.level.coinsObject.splice(index, 1);
             }
         });
-    }
-
-
-    spliceCoin() {
-        // Muss noch überarbeitet werden, da einige Coins direkt gelöscht werden
-        for (let i = 0; i < this.level.coinsObject.length; i++) {
-            Array.prototype.splice.call(this.level.coinsObject, i, 1);
-        }
     }
 
 
