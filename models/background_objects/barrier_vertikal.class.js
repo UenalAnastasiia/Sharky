@@ -6,6 +6,6 @@ class BarrierVertikalObject extends MovableObject {
 
 
     constructor() {
-        super().loadImage('../img/background/barrier/3.png');
+        super().loadImage('./img/background/barrier/3.png');
     }
 }

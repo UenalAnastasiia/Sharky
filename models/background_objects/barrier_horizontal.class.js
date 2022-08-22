@@ -7,7 +7,7 @@ class BarrierHorizontalObject extends MovableObject {
 
 
     constructor() {
-        super().loadImage('../img/background/barrier/2.png');
+        super().loadImage('./img/background/barrier/2.png');
         
     }
 }

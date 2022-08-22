@@ -3,11 +3,11 @@ class Character extends MovableObject {
     height = 200;
     width = 200;
     speed = 5;
-    swimmming_sound = new Audio('audio/swimming.mp3');
+    swimmming_sound = new Audio('./audio/swimming.mp3');
 
     
     constructor() {
-        super().loadImage('../img/sharkie/idle/1.png');
+        super().loadImage('./img/sharkie/idle/1.png');
         this.loadImages(CHARACTER_IMAGES.SWIMMING);
         this.loadImages(CHARACTER_IMAGES.ATTACK);
         this.loadImages(CHARACTER_IMAGES.DEAD);

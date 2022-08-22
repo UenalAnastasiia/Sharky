@@ -6,7 +6,7 @@ class Jelly_Regular extends MovableObject {
 
 
     constructor() {
-        super().loadImage('../img/enemy/jelly_fish/regular_damage/Yellow 1.png');
+        super().loadImage('./img/enemy/jelly_fish/regular_damage/Yellow 1.png');
         this.loadImages(ENEMIES_JELLY_REGULAR_IMAGES.SWIMMING);
         this.animate();
     }

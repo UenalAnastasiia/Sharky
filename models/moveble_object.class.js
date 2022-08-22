@@ -141,10 +141,5 @@ class MovableObject extends DrawableObject {
             showEndScreen();
         } 
         console.log('Collision with Endboss, Life ', this.endbossLife);
-    }
-
-    isKilled() {
-        return this.endbossLife == 0;
-    }
-    
+    } 
 }

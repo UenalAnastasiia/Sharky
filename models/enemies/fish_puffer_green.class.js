@@ -5,7 +5,7 @@ class Fish_Puffer_Green extends MovableObject {
 
 
     constructor() {
-        super().loadImage('../img/enemy/puffer_fish/bubbleeswim/1.bubbleswim1.png');
+        super().loadImage('./img/enemy/puffer_fish/bubbleeswim/1.bubbleswim1.png');
         this.loadImages(ENEMIES_PUFFER_GREEN_IMAGES.SWIMMING);
         this.pufferSwimmDirection();
         this.animate();

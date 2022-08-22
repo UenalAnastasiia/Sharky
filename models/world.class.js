@@ -200,7 +200,7 @@ class World {
 
     collidingWithEnemie() {
         this.character.hit();
-        new Audio('audio/hurt.mp3').play();
+        new Audio('./audio/hurt.mp3').play();
         this.statusBar_life.setPercentage(this.character.energy);
     }
 

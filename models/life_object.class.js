@@ -4,7 +4,7 @@ class LifeObject extends MovableObject {
 
 
     constructor() {
-        super().loadImage('../img/heart.png');
+        super().loadImage('./img/heart.png');
         // this.x = x;
         // this.y = y;
         this.lifePosition();

@@ -35,7 +35,6 @@ class DrawableObject {
     }
 
 
-
     // ------------------------- Rectangle  ------------------------- //
     // Help-Funktion to see the points when objects are crashing
     // this instanceof - draw image just by listed objects, not by all moveble objects
@@ -103,5 +102,4 @@ class DrawableObject {
     }
 
     // ------------------------- Rectangle END  ------------------------- //
-
 }

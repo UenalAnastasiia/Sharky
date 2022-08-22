@@ -5,7 +5,7 @@ class Jelly_Dangerous extends MovableObject {
 
 
     constructor() {
-        super().loadImage('../img/enemy/jelly_fish/super_dangerous/Pink 1.png');
+        super().loadImage('./img/enemy/jelly_fish/super_dangerous/Pink 1.png');
         this.loadImages(ENEMIES_JELLY_DANGEROUS_IMAGES.SWIMMING);
         this.animate();
     }
