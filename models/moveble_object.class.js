@@ -106,13 +106,13 @@ class MovableObject extends DrawableObject {
             this.coins = new Date().getTime();
         }
     }
-
+    
+    
     isCollectedCoin() {
         let timepassed = new Date().getTime() - this.coins;   // Differenz in ms
         timepassed = timepassed / 1000; // Differenz in Sec
         return timepassed < 1;
     }
-
 
 
     collectLife() {
@@ -124,11 +124,10 @@ class MovableObject extends DrawableObject {
         }
     }
 
+
     isCollectedLife() {
         let timepassed = new Date().getTime() - this.life;   // Differenz in ms
         timepassed = timepassed / 1000; // Differenz in Sec
         return timepassed < 1;
     }
-
-
 }
