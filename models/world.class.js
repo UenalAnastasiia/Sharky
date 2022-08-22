@@ -34,7 +34,7 @@ class World {
     draw() {
         this.clearCanvas();
         this.ctx.translate(this.camera_x, 0);      // translate - switched the object for x-coordinate and y-coordinate 
-        
+
         this.addObjectsToClasses();
 
         this.fixStatusBarToMap();
@@ -58,6 +58,7 @@ class World {
         this.addObjectsToMap(this.level.backgroundObjects);
         this.addObjectsToMap(this.level.sunlights);
         this.addObjectsToMap(this.level.enemies);
+        this.addObjectsToMap(this.level.endboss);
         this.addObjectsToMap(this.level.coinsObject);
         this.addObjectsToMap(this.level.lifeObject);
     }
@@ -128,11 +129,34 @@ class World {
 
     check() {
         setInterval(() => {
+            this.checkThrowUpBubble();
             this.checkCollisionsWithEnemies();
             this.checkCollisionsWithCoins();
             this.checkCollisionsWithLifeObject();
-            this.checkThrowUpBubble();
+            this.checkCollisionEndbossWithAttack();
         }, 200);
+    }
+
+
+    checkThrowUpBubble() {
+        if (this.keyboard.KEY_D && this.character.collectedCoins >= 100) {
+            let bubble = new BubbleObject(this.character.x + 120, this.character.y + 120);
+            this.bubbleObject.push(bubble);
+        }
+    }
+
+
+    checkCollisionEndbossWithAttack() {
+        if (this.bubbleObject.length > 0) {
+            this.level.endboss.forEach((endboss, index) => {
+                for (let i = 0; i < this.bubbleObject.length; i++) {
+                    if (this.bubbleObject[i].isColliding(endboss)) {
+                        this.bubbleObject.splice(index, 1);                                                                                              
+                        this.character.attackEndboss();                                                                         
+                    }
+                }
+            });
+        }
     }
 
 
@@ -141,6 +165,12 @@ class World {
             if (this.character.isColliding(enemy)) {
                 this.collidingWithEnemie();
                 // console.log('Collision with Character, energy ', this.character.energy);
+            }
+        });
+
+        this.level.endboss.forEach((endboss) => {
+            if (this.character.isColliding(endboss)) {
+                this.collidingWithEnemie();
             }
         });
     }
@@ -168,17 +198,10 @@ class World {
     }
 
 
-    checkThrowUpBubble() {
-        if (this.keyboard.KEY_D && this.character.collectedCoins >= 100) {
-            let bubble = new BubbleObject(this.character.x + 120, this.character.y + 120);
-            this.bubbleObject.push(bubble);
-        }
-    }
-
-
     collidingWithEnemie() {
         this.character.hit();
         new Audio('audio/hurt.mp3').play();
         this.statusBar_life.setPercentage(this.character.energy);
     }
+
 }

@@ -12,6 +12,7 @@ class MovableObject extends DrawableObject {
     coins = 0;
     collectedLifes = 100;
     life = 0;
+    endbossLife = 100;
 
 
     /**
@@ -107,10 +108,10 @@ class MovableObject extends DrawableObject {
         }
     }
     
-    
+
     isCollectedCoin() {
-        let timepassed = new Date().getTime() - this.coins;   // Differenz in ms
-        timepassed = timepassed / 1000; // Differenz in Sec
+        let timepassed = new Date().getTime() - this.coins;   
+        timepassed = timepassed / 1000;
         return timepassed < 1;
     }
 
@@ -126,8 +127,24 @@ class MovableObject extends DrawableObject {
 
 
     isCollectedLife() {
-        let timepassed = new Date().getTime() - this.life;   // Differenz in ms
-        timepassed = timepassed / 1000; // Differenz in Sec
+        let timepassed = new Date().getTime() - this.life; 
+        timepassed = timepassed / 1000;
         return timepassed < 1;
     }
+
+
+    attackEndboss() {
+        this.endbossLife -= 25;
+        if (this.endbossLife <= 0) {
+            this.endbossLife == 0;
+            console.log('Endboss dead');
+            showEndScreen();
+        } 
+        console.log('Collision with Endboss, Life ', this.endbossLife);
+    }
+
+    isKilled() {
+        return this.endbossLife == 0;
+    }
+    
 }

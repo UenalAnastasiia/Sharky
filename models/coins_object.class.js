@@ -5,8 +5,6 @@ class CoinsObject extends MovableObject {
 
     constructor() {
         super().loadImage('../img/marcadores/coins/3.png');
-        // this.x = x;
-        // this.y = y;
         this.coinsPosition();
         // this.animate();
     }

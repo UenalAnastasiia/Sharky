@@ -76,7 +76,6 @@ class Character extends MovableObject {
         this.x += this.speed;
         this.mirrorImage = false;
         this.swimmming_sound.play();
-
     }
 
 
@@ -84,21 +83,18 @@ class Character extends MovableObject {
         this.x -= this.speed;
         this.mirrorImage = true;
         this.swimmming_sound.play();
-
     }
 
 
     moveUpKey() {
         this.y -= this.speed;
         this.swimmming_sound.play();
-
     }
 
 
     moveDownKey() {
         this.y += this.speed;
         this.swimmming_sound.play();
-
     }
 
 

@@ -71,8 +71,6 @@ class DrawableObject {
         ctx.stroke();
     }
 
-
-
     
     drawFrameObjects(ctx) {
         ctx.beginPath();

@@ -104,6 +104,18 @@ function showGameOverScreen() {
     }
 }
 
+function showEndScreen() {
+    document.getElementById('audio').pause();
+    new Audio('audio/hurt.mp3').pause();
+    document.getElementById('gamewin-img').classList.remove('d-none');
+    document.getElementById('game').classList.add('d-none');
+    document.getElementById('audio-gamewin').play();
+
+    setTimeout(() => {
+        window.location.replace("index.html");
+    }, 3000);
+}
+
 
 /**
  * Keyboard Event
