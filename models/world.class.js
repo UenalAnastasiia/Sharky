@@ -130,6 +130,7 @@ class World {
         setInterval(() => {
             this.checkCollisionsWithEnemies();
             this.checkCollisionsWithCoins();
+            this.checkCollisionsWithLifeObject();
             this.checkThrowUpBubble();
         }, 200);
     }
@@ -140,6 +141,17 @@ class World {
             if (this.character.isColliding(enemy)) {
                 this.collidingWithEnemie();
                 // console.log('Collision with Character, energy ', this.character.energy);
+            }
+        });
+    }
+
+
+    checkCollisionsWithLifeObject() {
+        this.level.lifeObject.forEach((life, index) => {
+            if (this.character.isColliding(life)) {
+                this.character.collectLife();
+                this.statusBar_life.setPercentage(this.character.collectedLifes);
+                this.level.lifeObject.splice(index, 1);
             }
         });
     }
@@ -160,7 +172,6 @@ class World {
         if (this.keyboard.KEY_D) {
             let bubble = new BubbleObject(this.character.x + 120, this.character.y + 120);
             this.bubbleObject.push(bubble);
-            // this.character.characterBubbleThrowUp(this.character.x, this.character.y, this.character.width, this.character.height);
         }
     }
 

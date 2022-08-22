@@ -35,19 +35,13 @@ class Character extends MovableObject {
     intervalAnimations() {
         setInterval(() => {
             if (this.isDead()) {
-                this.swimmingAnimation(CHARACTER_IMAGES.DEAD);
-                setTimeout(() => {
-                    showGameOverScreen();
-                }, 2000);
-            } else if (this.isCollectedCoin()) {
-                // delete coin
+                this.characterDead();
+            } else if (this.isCollectedCoin() || this.isCollectedLife() || this.world.keyboard.KEY_D) {
                 this.swimmingAnimation(CHARACTER_IMAGES.BUBBLEATTACK);
             } else if (this.isHurt()) {
                 this.swimmingAnimation(CHARACTER_IMAGES.HURT);
             } else if (this.world.keyboard.KEY_SPACE) {
                 this.characterAttack();
-            } else if (this.world.keyboard.KEY_D) {
-                this.characterBubbleThrowUp();
             } else {
                 this.showSwimmImages();
             }
@@ -114,9 +108,12 @@ class Character extends MovableObject {
     characterAttack() {
         this.swimmingAnimation(CHARACTER_IMAGES.ATTACK);
     }
+    
 
-
-    characterBubbleThrowUp() {
-        this.swimmingAnimation(CHARACTER_IMAGES.BUBBLEATTACK);
+    characterDead() {
+        this.swimmingAnimation(CHARACTER_IMAGES.DEAD);
+        setTimeout(() => {
+            showGameOverScreen();
+        }, 2000);
     }
 }

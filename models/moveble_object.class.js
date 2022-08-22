@@ -10,6 +10,8 @@ class MovableObject extends DrawableObject {
     currentImage = 0;
     collectedCoins = 0;
     coins = 0;
+    collectedLifes = 100;
+    life = 0;
 
 
     /**
@@ -107,6 +109,23 @@ class MovableObject extends DrawableObject {
 
     isCollectedCoin() {
         let timepassed = new Date().getTime() - this.coins;   // Differenz in ms
+        timepassed = timepassed / 1000; // Differenz in Sec
+        return timepassed < 1;
+    }
+
+
+
+    collectLife() {
+        this.collectedLifes += 20;
+        if (this.collectedLifes > 100) {
+            this.collectedLifes = 100;
+        } else {
+            this.life = new Date().getTime();
+        }
+    }
+
+    isCollectedLife() {
+        let timepassed = new Date().getTime() - this.life;   // Differenz in ms
         timepassed = timepassed / 1000; // Differenz in Sec
         return timepassed < 1;
     }
