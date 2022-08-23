@@ -39,7 +39,7 @@ canvas {
     border: 6px solid white;
     box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
     border-radius: 10px;
-    margin-top: 25px;
+    margin-top: 40px;
 }
 
 /* START-PAGE */
@@ -117,7 +117,8 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
-    padding: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
     overflow-y: overlay;
     text-align: center;
 }
@@ -135,29 +136,9 @@ h1 {
 .popUpMargin {
     margin-right: 12px;
 }
-  
-.popUpBtn {
-    font-size: 18px;
-    color: white;
-    padding: 6px;
-    cursor: pointer;
-    background: rgb(13 13 25 / 24%);
-    display: inline-block;
-    border-radius: 10px;
-    border: 1px solid white;
-    text-decoration: none;
-    position: absolute;
-    top: 12px;
-    right: 24px;
-}
 
-.popUpBtn:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: 225ms ease-in-out;
-    background: #ffffffa3;
-    color: black;
-    border: 1px solid black;
+.close-btn-height {
+    height: 28px !important;
 }
 
 .instruction {
@@ -341,7 +322,7 @@ h1 {
 }
 
 .info-coin {    
-    margin-top: -6px;
+    margin-top: -12px;
     height: 50px;
     width: 50px;
 }

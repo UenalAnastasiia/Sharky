@@ -40,10 +40,10 @@
 
 <body>
     <div id="start-page">
-        <div class="music-box" onmouseover="showMusicSet()" onmouseout="hideMusicSet()">
+        <!-- <div class="music-box" onmouseover="showMusicSet()" onmouseout="hideMusicSet()">
             <img src="./img/music.png">
             <audio loop class="audio d-none" id="audio-start" src="./audio/waves.mp3" controls > </audio>
-        </div>
+        </div> -->
 
         <img onclick="RulesModal()" class="rules-img" src="./img/rules.png">
         <h1>Underwater World from Sharky</h1>
@@ -52,17 +52,17 @@
         <!-- INSTRUCTION -->
         <div class="popUpBox" id="popUpBox">
             <div class="popUpWindow">
-                <button class="popUpBtn" onclick="RulesModal()">X</button>
+                <img onclick="RulesModal()" class="rules-img close-btn-height" src="./img/close.png">
                 <h2 class="instruction">Instruction</h2>
                 <div class="key-rules">
                     <div class="rule">
                         <div class="key-rules-box">
                             <img class="rules-coin" src="./img/marcadores/coins/3.png">
-                            <span>Collect 5 coins <br> to attack with Bubble</span>
+                            <span>Collect min. 5 coins <br> to attack with Bubble</span>
                         </div>
                         <div class="key-rules-box">
                             <img class="rules-heart" src="./img/heart.png">
-                            <span>Collect the hearts <br> to health you</span>
+                            <span>Collect the hearts <br> to heal you</span>
                         </div>
                     </div>
 
@@ -119,7 +119,7 @@
 
             <div class="info-box margin-8">
                 <img class="info-coin" src="./img/marcadores/coins/3.png">
-                <span>Collect 5 coins <br> to attack with Bubble</span>
+                <span>Collect  min. 5 coins <br> to attack with Bubble</span>
             </div>
 
             <div class="info-box margin-8">
