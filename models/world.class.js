@@ -151,6 +151,7 @@ class World {
             this.level.endboss.forEach((endboss, index) => {
                 for (let i = 0; i < this.bubbleObject.length; i++) {
                     if (this.bubbleObject[i].isColliding(endboss)) {
+                        new Audio('./audio/endboss_hurt.mp3').play();
                         this.bubbleObject.splice(index, 1);                                                                                              
                         this.character.attackEndboss();                                                                         
                     }
@@ -180,6 +181,7 @@ class World {
         this.level.lifeObject.forEach((life, index) => {
             if (this.character.isColliding(life)) {
                 this.character.collectLife();
+                new Audio('./audio/coin.mp3').play();
                 this.statusBar_life.setPercentage(this.character.collectedLifes);
                 this.level.lifeObject.splice(index, 1);
             }
@@ -191,6 +193,7 @@ class World {
         this.level.coinsObject.forEach((coin, index) => {
             if (this.character.isColliding(coin)) {
                 this.character.collectCoin();
+                new Audio('./audio/coin.mp3').play();
                 this.statusBar_coin.setPercentage(this.character.collectedCoins);
                 this.level.coinsObject.splice(index, 1);
             }

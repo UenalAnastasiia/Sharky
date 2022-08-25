@@ -36,7 +36,7 @@ class Character extends MovableObject {
         setInterval(() => {
             if (this.isDead()) {
                 this.characterDead();
-            } else if (this.world.keyboard.KEY_D) {
+             } else if (this.world.keyboard.KEY_D) {
                 this.swimmingAnimation(CHARACTER_IMAGES.BUBBLEATTACK);
             } else if (this.isHurt()) {
                 this.swimmingAnimation(CHARACTER_IMAGES.HURT);

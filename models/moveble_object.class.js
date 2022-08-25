@@ -58,14 +58,28 @@ class MovableObject extends DrawableObject {
      * @returns true/false
      */
     isColliding(moveObj) {
-        return this.x  + 35 + 130 > moveObj.x &&
-        this.y  + 90 + 60 > moveObj.y &&
-        this.x  + 35 < moveObj.x &&
-        this.y  + 90 < moveObj.y + moveObj.height;
-        // return this.x + this.width > moveObj.x &&
-        //     this.y + this.height > moveObj.y &&
-        //     this.x < moveObj.x &&
-        //     this.y < moveObj.y + moveObj.height;
+        if (this instanceof Character) {
+            return (
+                this.x + 35 + 130 > moveObj.x + 35 &&
+                this.y + 110 + 60 > moveObj.y &&
+                this.x + 35 < moveObj.x + 35 &&
+                this.y + 90 < moveObj.y + moveObj.height
+            );
+        } else if (this instanceof Endboss) {
+            return (
+                this.x + this.width > moveObj.x + 35 &&
+                this.y  + this.height > moveObj.y - 110 &&
+                this.x + 35 < moveObj.x &&
+                this.y + 90 < moveObj.y - 110 + moveObj.height 
+            );
+        } else {
+            return (
+                this.x + this.width > moveObj.x &&
+                this.y + this.height > moveObj.y &&
+                this.x < moveObj.x + moveObj.width &&
+                this.y < moveObj.y + moveObj.height
+            );
+        }                                     
     }
 
 
@@ -107,10 +121,10 @@ class MovableObject extends DrawableObject {
             this.coins = new Date().getTime();
         }
     }
-    
+
 
     isCollectedCoin() {
-        let timepassed = new Date().getTime() - this.coins;   
+        let timepassed = new Date().getTime() - this.coins;
         timepassed = timepassed / 1000;
         return timepassed < 1;
     }
@@ -127,19 +141,19 @@ class MovableObject extends DrawableObject {
 
 
     isCollectedLife() {
-        let timepassed = new Date().getTime() - this.life; 
+        let timepassed = new Date().getTime() - this.life;
         timepassed = timepassed / 1000;
         return timepassed < 1;
     }
 
 
     attackEndboss() {
-        this.endbossLife -= 25;
+        this.endbossLife -= 10;
         if (this.endbossLife <= 0) {
             this.endbossLife == 0;
             console.log('Endboss dead');
             showEndScreen();
-        } 
+        }
         console.log('Collision with Endboss, Life ', this.endbossLife);
-    } 
+    }
 }

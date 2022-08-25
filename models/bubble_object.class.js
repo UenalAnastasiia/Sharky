@@ -11,10 +11,10 @@ class BubbleObject extends MovableObject {
 
     }
 
-    
+
     throwUpBubble() {
         this.speedY = 10;
-        if (keyboard.KEY_LEFT) {
+        if (keyboard.KEY_LEFT || this.mirrorImage) {
             setInterval(() => {
                 this.x -= 10;
             }, 25);
