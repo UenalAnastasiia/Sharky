@@ -97,7 +97,7 @@ function showGameOverScreen() {
 
         setTimeout(() => {
             window.location.replace("index.html");
-        }, 1500);
+        }, 3000);
     }
 }
 
@@ -153,7 +153,7 @@ window.addEventListener("keyup", (event) => {
     if (event.defaultPrevented) {
         return;
     }
-    
+
     switch (event.key) {
         case "ArrowRight":
             keyboard.KEY_RIGHT = false;

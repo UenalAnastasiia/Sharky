@@ -14,7 +14,7 @@ class LifeObject extends MovableObject {
 
     animate() {
         setInterval(() => {
-            this.swimmingAnimation(ENEMIES_PUFFER_GREEN_IMAGES.SWIMMING);
+            this.showAnimation(ENEMIES_PUFFER_GREEN_IMAGES.SWIMMING);
         }, 100);
     }
 

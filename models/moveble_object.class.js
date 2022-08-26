@@ -19,7 +19,7 @@ class MovableObject extends DrawableObject {
      * Load images from each object and animeted it
      * @param {array} images 
      */
-    swimmingAnimation(images) {
+    showAnimation(images) {
         let i = this.currentImage % images.length;    // % is Modulu => means the math rest   // let i = 0 % 8;
         let path = images[i];
         this.img = this.imageCache[path];
@@ -148,12 +148,10 @@ class MovableObject extends DrawableObject {
 
 
     attackEndboss() {
-        this.endbossLife -= 10;
+        this.endbossLife -= 20;
         if (this.endbossLife <= 0) {
             this.endbossLife == 0;
-            console.log('Endboss dead');
-            showEndScreen();
-        }
-        console.log('Collision with Endboss, Life ', this.endbossLife);
+            world.level.endboss[0].showDeadImages();
+        } 
     }
 }

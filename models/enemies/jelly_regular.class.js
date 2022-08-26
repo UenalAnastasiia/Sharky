@@ -15,7 +15,7 @@ class Jelly_Regular extends MovableObject {
     animate() {
         this.jellySwimmDirection();
         setInterval(() => {
-            this.swimmingAnimation(ENEMIES_JELLY_REGULAR_IMAGES.SWIMMING);
+            this.showAnimation(ENEMIES_JELLY_REGULAR_IMAGES.SWIMMING);
         }, 100);
     }
 

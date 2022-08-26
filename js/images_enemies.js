@@ -46,6 +46,13 @@ ENEMIES_ENDBOSS_IMAGES = {
         './img/enemy/final_enemy/floating/6.png'
     ],
 
+    'HURT': [
+        './img/enemy/final_enemy/hurt/1.png',
+        './img/enemy/final_enemy/hurt/2.png',
+        './img/enemy/final_enemy/hurt/3.png',
+        './img/enemy/final_enemy/hurt/4.png'
+    ],
+
     'DEAD': [
         './img/enemy/final_enemy/dead/Mesa de trabajo 2 copia 6.png',
         './img/enemy/final_enemy/dead/Mesa de trabajo 2 copia 7.png',

@@ -16,7 +16,7 @@ class Fish_Puffer_Red extends MovableObject {
         this.moveLeft();
 
         setInterval(() => {
-            this.swimmingAnimation(ENEMIES_PUFFER_RED_IMAGES.SWIMMING);
+            this.showAnimation(ENEMIES_PUFFER_RED_IMAGES.SWIMMING);
         }, 100);
     }
 

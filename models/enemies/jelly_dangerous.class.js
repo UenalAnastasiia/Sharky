@@ -14,7 +14,7 @@ class Jelly_Dangerous extends MovableObject {
     animate() {
         this.jellySwimmDirection();
         setInterval(() => {
-            this.swimmingAnimation(ENEMIES_JELLY_DANGEROUS_IMAGES.SWIMMING);
+            this.showAnimation(ENEMIES_JELLY_DANGEROUS_IMAGES.SWIMMING);
         }, 100);
     }
 

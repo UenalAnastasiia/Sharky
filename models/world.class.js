@@ -7,7 +7,7 @@ class World {
     camera_x = 0;
     statusBar_life = new StatusBar_Life();
     statusBar_coin = new StatusBar_Coin();
-    bubbleObject = [];
+    bubbleObject = []; 
 
 
     constructor(canvas, keyboard) {
@@ -153,7 +153,8 @@ class World {
                     if (this.bubbleObject[i].isColliding(endboss)) {
                         new Audio('./audio/endboss_hurt.mp3').play();
                         this.bubbleObject.splice(index, 1);                                                                                              
-                        this.character.attackEndboss();                                                                         
+                        this.character.attackEndboss();     
+                        this.level.endboss[0].showHurtImages();                                                         
                     }
                 }
             });
@@ -165,7 +166,6 @@ class World {
         this.level.enemies.forEach((enemy) => {
             if (this.character.isColliding(enemy)) {
                 this.collidingWithEnemie();
-                // console.log('Collision with Character, energy ', this.character.energy);
             }
         });
 

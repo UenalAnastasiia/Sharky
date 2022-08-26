@@ -37,9 +37,9 @@ class Character extends MovableObject {
             if (this.isDead()) {
                 this.characterDead();
              } else if (this.world.keyboard.KEY_D) {
-                this.swimmingAnimation(CHARACTER_IMAGES.BUBBLEATTACK);
+                this.showAnimation(CHARACTER_IMAGES.BUBBLEATTACK);
             } else if (this.isHurt()) {
-                this.swimmingAnimation(CHARACTER_IMAGES.HURT);
+                this.showAnimation(CHARACTER_IMAGES.HURT);
             } else if (this.world.keyboard.KEY_SPACE) {
                 this.characterAttack();
             } else {
@@ -51,7 +51,7 @@ class Character extends MovableObject {
 
     showSwimmImages() {
         if (this.world.keyboard.KEY_RIGHT || this.world.keyboard.KEY_LEFT || this.world.keyboard.KEY_DOWN || this.world.keyboard.KEY_UP) {
-            this.swimmingAnimation(CHARACTER_IMAGES.SWIMMING);
+            this.showAnimation(CHARACTER_IMAGES.SWIMMING);
         }
     }
 
@@ -102,12 +102,12 @@ class Character extends MovableObject {
      * If Spacebar pressed => Character attacked
      */
     characterAttack() {
-        this.swimmingAnimation(CHARACTER_IMAGES.ATTACK);
+        this.showAnimation(CHARACTER_IMAGES.ATTACK);
     }
     
 
     characterDead() {
-        this.swimmingAnimation(CHARACTER_IMAGES.DEAD);
+        this.showAnimation(CHARACTER_IMAGES.DEAD);
         setTimeout(() => {
             showGameOverScreen();
         }, 2000);
