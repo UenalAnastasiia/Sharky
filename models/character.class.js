@@ -110,6 +110,6 @@ class Character extends MovableObject {
         this.showAnimation(CHARACTER_IMAGES.DEAD);
         setTimeout(() => {
             showGameOverScreen();
-        }, 2000);
+        }, 1000);
     }
 }
