@@ -64,6 +64,10 @@ ENEMIES_ENDBOSS_IMAGES = {
         './img/enemy/final_enemy/dead/Mesa de trabajo 2 copia 7.png',
         './img/enemy/final_enemy/dead/Mesa de trabajo 2 copia 8.png',
         './img/enemy/final_enemy/dead/Mesa de trabajo 2 copia 9.png',
+        './img/enemy/final_enemy/dead/Mesa de trabajo 2 copia 10.png',
+        './img/enemy/final_enemy/dead/Mesa de trabajo 2 copia 10.png',
+        './img/enemy/final_enemy/dead/Mesa de trabajo 2 copia 10.png',
+        './img/enemy/final_enemy/dead/Mesa de trabajo 2 copia 10.png',
         './img/enemy/final_enemy/dead/Mesa de trabajo 2 copia 10.png'
-    ]
+    ],
 }

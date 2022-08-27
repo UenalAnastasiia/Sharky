@@ -105,7 +105,7 @@ class World {
         }
 
         moveObj.draw(this.ctx);
-        moveObj.drawFrame(this.ctx);
+        // moveObj.drawFrame(this.ctx);
 
         if (moveObj.mirrorImage) {
             this.turnImageBack(moveObj);

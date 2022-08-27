@@ -31,6 +31,12 @@ CHARACTER_IMAGES = {
         './img/sharkie/dead/poisoned/9.png',
         './img/sharkie/dead/poisoned/10.png',
         './img/sharkie/dead/poisoned/11.png',
+        './img/sharkie/dead/poisoned/12.png',
+        './img/sharkie/dead/poisoned/12.png',
+        './img/sharkie/dead/poisoned/12.png',
+        './img/sharkie/dead/poisoned/12.png',
+        './img/sharkie/dead/poisoned/12.png',
+        './img/sharkie/dead/poisoned/12.png',
         './img/sharkie/dead/poisoned/12.png'
     ],
 
