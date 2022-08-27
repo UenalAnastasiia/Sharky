@@ -4,6 +4,8 @@ class Character extends MovableObject {
     width = 200;
     speed = 5;
     swimmming_sound = new Audio('./audio/swimming.mp3');
+    notHurtBySlap = false;
+    slapAttack = false;
 
     
     constructor() {
@@ -38,9 +40,9 @@ class Character extends MovableObject {
                 this.characterDead();
              } else if (this.world.keyboard.KEY_D) {
                 this.showAnimation(CHARACTER_IMAGES.BUBBLEATTACK);
-            } else if (this.isHurt()) {
+            } else if (this.isHurt() && !this.slapAttack && !this.world.keyboard.KEY_SPACE) {
                 this.showAnimation(CHARACTER_IMAGES.HURT);
-            } else if (this.world.keyboard.KEY_SPACE) {
+            } else if (this.world.keyboard.KEY_SPACE && this.slapAttack == false) {
                 this.characterAttack();
             } else {
                 this.showSwimmImages();
@@ -103,6 +105,10 @@ class Character extends MovableObject {
      */
     characterAttack() {
         this.showAnimation(CHARACTER_IMAGES.ATTACK);
+        this.slapAttack = true;
+        setTimeout(() => {
+            this.slapAttack = false;
+        }, 150);
     }
     
 

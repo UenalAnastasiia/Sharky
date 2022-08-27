@@ -58,7 +58,7 @@ class MovableObject extends DrawableObject {
      * @returns true/false
      */
     isColliding(moveObj) {
-        if (this instanceof Character) {
+        if (this instanceof Character || this instanceof Fish_Puffer_Green || this instanceof Fish_Puffer_Red || this instanceof Jelly_Dangerous || this instanceof Jelly_Regular) {
             return (
                 this.x + 35 + 130 > moveObj.x + 35 &&
                 this.y + 110 + 60 > moveObj.y &&
@@ -68,9 +68,9 @@ class MovableObject extends DrawableObject {
         } else if (this instanceof Endboss) {
             return (
                 this.x + this.width > moveObj.x + 35 &&
-                this.y  + this.height > moveObj.y - 110 &&
+                this.y + this.height > moveObj.y - 110 &&
                 this.x + 35 < moveObj.x &&
-                this.y + 90 < moveObj.y - 110 + moveObj.height 
+                this.y + 90 < moveObj.y - 110 + moveObj.height
             );
         } else {
             return (
@@ -79,12 +79,24 @@ class MovableObject extends DrawableObject {
                 this.x < moveObj.x + moveObj.width &&
                 this.y < moveObj.y + moveObj.height
             );
-        }                                     
+        }
     }
 
 
-    hit() {
-        this.energy -= 5;
+    collisionSlapEnemie(moveObj) {
+        if (moveObj instanceof Fish_Puffer_Green || moveObj instanceof Fish_Puffer_Red || moveObj instanceof Jelly_Dangerous || moveObj instanceof Jelly_Regular) {
+            return (
+                (this.x + 35) + 130 > (moveObj.x + 35) &&
+                (this.y + 110) + 60 > moveObj.y &&
+                (this.x + 35) < (moveObj.x + 35) &&
+                (this.y + 90) < moveObj.y + moveObj.height
+            );
+        }
+    }
+
+
+    hit(amount) {
+        this.energy -= amount;
         if (this.energy < 0) {
             this.energy = 0;
         } else {
@@ -98,9 +110,13 @@ class MovableObject extends DrawableObject {
      * @returns true/false
      */
     isHurt() {
-        let timepassed = new Date().getTime() - this.lastHit;   // Differenz in ms
-        timepassed = timepassed / 1000; // Differenz in Sec
-        return timepassed < 1;
+        if (this.notHurtBySlap) { 
+            return false; 
+        } else {
+            let timepassed = new Date().getTime() - this.lastHit;   // Differenz in ms
+            timepassed = timepassed / 1000; // Differenz in Sec
+            return timepassed < 1;
+        }
     }
 
 
@@ -152,6 +168,6 @@ class MovableObject extends DrawableObject {
         if (this.endbossLife <= 0) {
             this.endbossLife == 0;
             world.level.endboss[0].showDeadImages();
-        } 
+        }
     }
 }

@@ -5,6 +5,12 @@ ENEMIES_PUFFER_RED_IMAGES = {
         './img/enemy/puffer_fish/bubbleeswim/3.bubbleswim3.png',
         './img/enemy/puffer_fish/bubbleeswim/3.bubbleswim4.png',
         './img/enemy/puffer_fish/bubbleeswim/3.bubbleswim5.png'
+    ],
+
+    'DEAD': [
+        './img/enemy/puffer_fish/die/3.png',
+        './img/enemy/puffer_fish/die/3.3.png',
+        './img/enemy/puffer_fish/die/3.2.png'
     ]
 }
 
