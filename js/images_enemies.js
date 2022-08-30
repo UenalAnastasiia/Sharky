@@ -5,12 +5,6 @@ ENEMIES_PUFFER_RED_IMAGES = {
         './img/enemy/puffer_fish/bubbleeswim/3.bubbleswim3.png',
         './img/enemy/puffer_fish/bubbleeswim/3.bubbleswim4.png',
         './img/enemy/puffer_fish/bubbleeswim/3.bubbleswim5.png'
-    ],
-
-    'DEAD': [
-        './img/enemy/puffer_fish/die/3.png',
-        './img/enemy/puffer_fish/die/3.3.png',
-        './img/enemy/puffer_fish/die/3.2.png'
     ]
 }
 
@@ -39,6 +33,16 @@ ENEMIES_JELLY_REGULAR_IMAGES = {
         './img/enemy/jelly_fish/regular_damage/Yellow 2.png',
         './img/enemy/jelly_fish/regular_damage/Yellow 3.png',
         './img/enemy/jelly_fish/regular_damage/Yellow 4.png',
+    ]
+}
+
+ENEMIES_FISH_ORANGE_IMAGES = {
+    'SWIMMING': [
+        './img/enemy/puffer_fish/transition/2.transition1.png',
+        './img/enemy/puffer_fish/transition/2.transition2.png',
+        './img/enemy/puffer_fish/transition/2.transition3.png',
+        './img/enemy/puffer_fish/transition/2.transition4.png',
+        './img/enemy/puffer_fish/transition/2.transition5.png'
     ]
 }
 

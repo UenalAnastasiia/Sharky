@@ -4,6 +4,7 @@ class MovableObject extends DrawableObject {
     speed = 0.15;
     mirrorImage = false;
     speedY = 0;
+    speedYBubble = 2;
     acceleration = 0.01;
     energy = 100;
     lastHit = 0;
@@ -39,10 +40,12 @@ class MovableObject extends DrawableObject {
      */
     applyGravity() {
         setInterval(() => {
-            if (this.isAboveGround()) {
-                this.y -= this.speedY;
-                this.speedY -= this.acceleration;
-            }
+            this.y += this.speedYBubble;
+            this.speedYBubble -= this.acceleration;
+            // if (this.isAboveGround()) {
+            //     this.y -= this.speedYBubble;
+            //     this.speedYBubble -= this.acceleration;
+            // }
         }, 1000 / 25);
     }
 
@@ -58,7 +61,7 @@ class MovableObject extends DrawableObject {
      * @returns true/false
      */
     isColliding(moveObj) {
-        if (this instanceof Character || this instanceof Fish_Puffer_Green || this instanceof Fish_Puffer_Red || this instanceof Jelly_Dangerous || this instanceof Jelly_Regular) {
+        if (this instanceof Character || this instanceof Fish_Puffer_Green || this instanceof Fish_Puffer_Red || this instanceof Fish_Orange || this instanceof Jelly_Dangerous || this instanceof Jelly_Regular) {
             return (
                 this.x + 35 + 130 > moveObj.x + 35 &&
                 this.y + 110 + 60 > moveObj.y &&
@@ -84,7 +87,7 @@ class MovableObject extends DrawableObject {
 
 
     collisionSlapEnemie(moveObj) {
-        if (moveObj instanceof Fish_Puffer_Green || moveObj instanceof Fish_Puffer_Red || moveObj instanceof Jelly_Dangerous || moveObj instanceof Jelly_Regular) {
+        if (moveObj instanceof Fish_Puffer_Green || moveObj instanceof Fish_Puffer_Red || moveObj instanceof Fish_Orange || moveObj instanceof Jelly_Dangerous || moveObj instanceof Jelly_Regular) {
             return (
                 (this.x + 35) + 130 > (moveObj.x + 35) &&
                 (this.y + 110) + 60 > moveObj.y &&
@@ -110,8 +113,8 @@ class MovableObject extends DrawableObject {
      * @returns true/false
      */
     isHurt() {
-        if (this.notHurtBySlap) { 
-            return false; 
+        if (this.notHurtBySlap) {
+            return false;
         } else {
             let timepassed = new Date().getTime() - this.lastHit;   // Differenz in ms
             timepassed = timepassed / 1000; // Differenz in Sec
@@ -164,7 +167,7 @@ class MovableObject extends DrawableObject {
 
 
     attackEndboss() {
-        this.endbossLife -= 20;
+        this.endbossLife -= 10;
         if (this.endbossLife <= 0) {
             this.endbossLife == 0;
             world.level.endboss[0].showDeadImages();

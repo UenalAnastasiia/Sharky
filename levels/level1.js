@@ -8,6 +8,10 @@ const level1 = new Level(
         new Fish_Puffer_Green(),
         new Fish_Puffer_Green(),
         new Fish_Puffer_Green(),
+        new Fish_Orange(),
+        new Fish_Orange(),
+        new Fish_Orange(),
+        new Fish_Orange(),
         new Jelly_Dangerous(),
         new Jelly_Dangerous(),
         new Jelly_Dangerous(),
@@ -72,8 +76,6 @@ const level1 = new Level(
     ],
 
     [
-        new LifeObject(),
-        new LifeObject(),
         new LifeObject(),
         new LifeObject(),
         new LifeObject()

@@ -7,7 +7,6 @@ class Fish_Puffer_Red extends MovableObject {
     constructor() {
         super().loadImage('./img/enemy/puffer_fish/bubbleeswim/3.bubbleswim1.png');
         this.loadImages(ENEMIES_PUFFER_RED_IMAGES.SWIMMING);
-        this.loadImages(ENEMIES_PUFFER_RED_IMAGES.DEAD);
         this.pufferSwimmDirection();
         this.animate();
     }
@@ -18,7 +17,7 @@ class Fish_Puffer_Red extends MovableObject {
 
         setInterval(() => {
             this.showAnimation(ENEMIES_PUFFER_RED_IMAGES.SWIMMING);
-        }, 100);
+        }, 200);
     }
 
 

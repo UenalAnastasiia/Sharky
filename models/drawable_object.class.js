@@ -41,7 +41,7 @@ class DrawableObject {
     drawFrame(ctx) {
         if (this instanceof Character) {
             this.drawFrameCharacter(ctx);
-        } else if (this instanceof Fish_Puffer_Green || this instanceof Fish_Puffer_Red || this instanceof Jelly_Dangerous || this instanceof Jelly_Regular) {
+        } else if (this instanceof Fish_Puffer_Green || this instanceof Fish_Puffer_Red || this instanceof Fish_Orange || this instanceof Jelly_Dangerous || this instanceof Jelly_Regular) {
             this.drawFrameEnemies(ctx);
         } else if (this instanceof Endboss) {
             this.drawFrameEndboss(ctx);

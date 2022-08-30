@@ -8,6 +8,8 @@ class World {
     statusBar_life = new StatusBar_Life();
     statusBar_coin = new StatusBar_Coin();
     bubbleObject = [];
+    distanceToEndboss = false;
+    distanceCheck;
 
 
     constructor(canvas, keyboard) {
@@ -133,10 +135,10 @@ class World {
     check() {
         setInterval(() => {
             this.checkThrowUpBubble();
+            this.checkDistanceToEndboss();
             this.checkCollisionsWithEnemies();
             this.checkCollisionsWithCoins();
             this.checkCollisionsWithLifeObject();
-            this.checkCollisionEndbossWithAttack()
             this.checkCollisionEnemieWithSlap();
         }, 200);
     }
@@ -146,6 +148,17 @@ class World {
         if (this.keyboard.KEY_D && this.character.collectedCoins >= 100) {
             let bubble = new BubbleObject(this.character.x + 120, this.character.y + 120);
             this.bubbleObject.push(bubble);
+        }
+    }
+
+
+    checkDistanceToEndboss() {
+        if (this.character.x >= 2000) {
+           setInterval(() => {
+                this.checkCollisionEndbossWithAttack();
+            }, 200);
+        } else if(this.character.x < 2000) {
+            return;
         }
     }
 

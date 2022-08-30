@@ -18,10 +18,12 @@ class BubbleObject extends MovableObject {
             setInterval(() => {
                 this.x -= 10;
             }, 25);
+            this.applyGravity();
         } else {
             setInterval(() => {
                 this.x += 10;
             }, 25);
-        }
+            this.applyGravity();
+        } 
     }
 }
