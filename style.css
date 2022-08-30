@@ -37,7 +37,7 @@ body {
 
 canvas {
     border: 6px solid white;
-    box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
+    box-shadow: -2px 0px 6px 0px #fdfdfdad;
     border-radius: 10px;
     margin-top: 40px;
 }
@@ -53,7 +53,7 @@ canvas {
     top: 26px;
     right: 24px;
     height: 48px;
-    box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
+    box-shadow: -2px 0px 6px 0px #fdfdfdad;
     z-index: 1;
 }
 
@@ -87,6 +87,7 @@ canvas {
     border-radius: 24px;
     border: 3px solid white;
     filter: drop-shadow(0px 0px 20px #9e9ec9);
+    box-shadow: -2px 0px 6px 0px #fdfdfdad;
     position: absolute;
     top: 20%;
 }
@@ -124,7 +125,7 @@ svg {
   
 .popUpWindow {
     background: radial-gradient(rgb(201 193 220), rgb(90 0 193));
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px #fdfdfdad;
     border-radius: 10px;
     position: absolute;
     top: 50%;
@@ -241,6 +242,7 @@ svg {
     padding: 12px;
     border-radius: 24px;
     border: 1px solid white;
+    box-shadow: -2px 0px 6px 0px #fdfdfdad;
 }
 
 .lobby:hover {
@@ -259,7 +261,7 @@ svg {
     right: 24px;
     z-index: 1;
     height: 48px;
-    box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
+    box-shadow: -2px 0px 6px 0px #fdfdfdad;
 }
 
 #info-btn-close {
@@ -319,6 +321,7 @@ svg {
     border-radius: 24px;
     padding: 6px;
     background: #ffffff94;
+    box-shadow: -2px 0px 6px 0px #fdfdfdad;
 }
 
 .music-box audio {
@@ -378,6 +381,7 @@ svg {
     background: #ffffff94;
     max-width: 170px;
     min-height: 100px;
+    box-shadow: -2px 0px 6px 0px #fdfdfdad;
 }
 
 .info-box span {
