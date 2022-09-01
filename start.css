@@ -94,8 +94,8 @@ canvas {
 }
 
 .start-btn, .demo-btn {
-    /* background: radial-gradient(rgb(0 152 255), rgb(90 0 193)); */
-    background: radial-gradient(rgb(201 193 220), rgb(90 0 193));
+    background: radial-gradient(rgb(0 152 255), rgb(90 0 193));
+    /* background: radial-gradient(rgb(201 193 220), rgb(90 0 193)); */
     font-size: 48px;
     color: white;
     border-radius: 24px;
@@ -123,7 +123,7 @@ svg {
     font-size: 24px;
     color: white;
     padding: 12px;
-    background: radial-gradient(rgb(201 193 220), rgb(90 0 193));
+    background: radial-gradient(rgb(0 152 255), rgb(90 0 193));
     border-radius: 10px;
     box-shadow: -2px 0px 6px 0px #fdfdfdad;
     letter-spacing: 2px;
