@@ -38,6 +38,17 @@ canvas {
 
 /* START-PAGE */
 
+.mobile-header {
+    display: none;
+    position: absolute;
+    left: 10px;
+    color: white;
+    font-size: 42px;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    filter: drop-shadow(0px 0px 20px  #9e9ec9);  
+}
+
 .rules-img {
     padding: 2px;
     background: #ffffffa6;
@@ -95,7 +106,6 @@ canvas {
 
 .start-btn, .demo-btn {
     background: radial-gradient(rgb(0 152 255), rgb(90 0 193));
-    /* background: radial-gradient(rgb(201 193 220), rgb(90 0 193)); */
     font-size: 48px;
     color: white;
     border-radius: 24px;
@@ -111,6 +121,7 @@ canvas {
 }
 
 svg {
+    display: block;
     margin-left: 30px;
     margin-top: 12px;
     text-shadow: 4px 4px 8px rgb(255 255 255 / 45%);
@@ -127,6 +138,7 @@ svg {
     border-radius: 10px;
     box-shadow: -2px 0px 6px 0px #fdfdfdad;
     letter-spacing: 2px;
+    margin: 8px
 }
 
 .game-description h3 {
@@ -218,6 +230,8 @@ svg {
     color: white;
     margin-top: 36px;
     font-size: 52px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .key-rules-box {

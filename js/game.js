@@ -18,6 +18,8 @@ function loadGame() {
 function init() {
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
+    btnTouchEventStart();
+    btnTouchEventEnd();
     // console.log('My Character is', world.character);
 }
 
@@ -123,69 +125,3 @@ function showEndScreen() {
         window.location.replace("index.html");
     }, 3000);
 }
-
-
-/**
- * Keyboard Event
- */
-window.addEventListener("keydown", (event) => {
-    if (event.defaultPrevented) {
-        return;
-    }
-
-    switch (event.key) {
-        case "ArrowRight":
-            keyboard.KEY_RIGHT = true;
-            break;
-        case "ArrowLeft":
-            keyboard.KEY_LEFT = true;
-            break;
-        case "ArrowDown":
-            keyboard.KEY_DOWN = true;
-            break;
-        case "ArrowUp":
-            keyboard.KEY_UP = true;
-            break;
-        case " ":
-            keyboard.KEY_SPACE = true;
-            break;
-        case "d":
-            keyboard.KEY_D = true;
-            break;
-        default:
-            return; // Quit when this doesn't handle the key event.
-    }
-    // Cancel the default action to avoid it being handled twice
-    event.preventDefault();
-}, true);
-
-
-window.addEventListener("keyup", (event) => {
-    if (event.defaultPrevented) {
-        return;
-    }
-
-    switch (event.key) {
-        case "ArrowRight":
-            keyboard.KEY_RIGHT = false;
-            break;
-        case "ArrowLeft":
-            keyboard.KEY_LEFT = false;
-            break;
-        case "ArrowDown":
-            keyboard.KEY_DOWN = false;
-            break;
-        case "ArrowUp":
-            keyboard.KEY_UP = false;
-            break;
-        case " ":
-            keyboard.KEY_SPACE = false;
-            break;
-        case "d":
-            keyboard.KEY_D = false;
-            break;
-        default:
-            return;
-    }
-    event.preventDefault();
-}, false);

@@ -36,6 +36,7 @@
     <script src="./models/life_object.class.js"></script>
     <!-- JavaScript Libraries -->
     <script src="./levels/level1.js"></script>
+    <script src="./js/keyboard_events.js"></script>
     <script src="./js/game.js"></script>
 </head>
 
@@ -45,6 +46,7 @@
         <!-- INSTRUCTION BUTTON -->
         <img title="Instruction" onclick="rulesModal()" class="rules-img" src="./img/rules.png">
 
+        <h1 class="mobile-header">SHARKY'S WORLD</h1>
         <!-- HEADER ANIMATION -->
         <svg viewbox="0 0 300 20">
             <defs>
@@ -108,7 +110,7 @@
         <!-- INSTRUCTION -->
         <div class="popUpBox" id="popUpBox">
             <div class="popUpWindow">
-                <img onclick="rulesModal()" class="rules-img close-btn-height" src="./img/close.png">
+                <img onclick="rulesModal()" class="rules-img close-btn-height top-6" src="./img/close.png">
                 <h2 class="instruction">Instruction</h2>
                 <div class="key-rules">
                     <div class="rule">
@@ -140,7 +142,7 @@
 
                     <h2 class="enemies-header">ENEMIES</h2>
                     <div class="rule">
-                        <div class="key-rules-box bg-white">
+                        <div class="key-rules-box bg-white enemies-box-width">
                             <img class="enemie-rules-img-80 margin-48" src="./img/enemy/jelly_fish/jelly.gif">
                             <img class="enemie-rules-img-80 margin-48"
                                 src="./img/enemy/puffer_fish/bubbleeswim/Preview.gif">
@@ -201,6 +203,14 @@
             <!-- Bei canvas muss die width/height immer inline geschrieben werden, nicht in style.css -->
         </canvas>
         <!-- GAME SCREEN END -->
+
+        <div class="mobil-keys">
+            <img id="btn-left" src="./img/keys/left.png">
+            <img id="btn-right" src="./img/keys/right.png">
+            <img id="btn-up" src="./img/keys/up.png">
+            <img id="btn-down" src="./img/keys/down.png">
+            <img id="btn-attack" class="bubble-key-img" src="./img/sharkie/attack/bubble_trap/op1_with_bubble/7.png">
+        </div>
 
     </div>
     <!-- GAME-CONTAINER END -->
