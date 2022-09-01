@@ -47,7 +47,7 @@ class Character extends MovableObject {
             } else {
                 this.showSwimmImages();
             }
-        }, 75);
+        }, 100);
     }
 
 

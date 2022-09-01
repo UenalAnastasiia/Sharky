@@ -45,8 +45,6 @@ class DrawableObject {
             this.drawFrameEnemies(ctx);
         } else if (this instanceof Endboss) {
             this.drawFrameEndboss(ctx);
-        } else if (this instanceof BarrierHorizontalObject) {
-            this.drawFrameBarrierHorizont(ctx);
         } else if (this instanceof BubbleObject || this instanceof CoinsObject || this instanceof LifeObject) {
             this.drawFrameObjects(ctx);
         }
@@ -86,19 +84,6 @@ class DrawableObject {
         ctx.strokeStyle = 'yellow';
         ctx.rect(this.x + 20, this.y + 110, 310, 180);
         // ctx.rect(this.x + 20, this.y + 110, 310, 180);
-        ctx.stroke();
-    }
-
-
-    drawFrameBarrierHorizont(ctx) {
-        ctx.beginPath();
-        ctx.lineWidth = '3';
-        ctx.strokeStyle = 'green';
-        // ctx.rect(this.x + 5, this.y, 440, 250);
-        ctx.moveTo(650, 250);
-        ctx.quadraticCurveTo(80, 200, 230, 500);
-        ctx.moveTo(650, 600)
-        ctx.lineTo(650, 250);
         ctx.stroke();
     }
 

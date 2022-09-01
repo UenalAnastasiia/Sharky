@@ -154,11 +154,11 @@ class World {
 
     checkDistanceToEndboss() {
         if (this.character.x >= 2000) {
-           setInterval(() => {
+            setInterval(() => {
                 this.checkCollisionEndbossWithAttack();
             }, 200);
-        } else if(this.character.x < 2000) {
-            return;
+        } else if (this.character.x < 2000) {
+            return false;
         }
     }
 

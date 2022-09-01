@@ -57,6 +57,19 @@ canvas {
     z-index: 1;
 }
 
+.close-video-img {
+    padding: 2px;
+    background: #ffffffa6;
+    border-radius: 100%;
+    border: 2px solid white;
+    position: absolute;
+    top: -75px;
+    right: -100px;
+    height: 48px;
+    box-shadow: -2px 0px 6px 0px #fdfdfdad;
+    z-index: 1; 
+}
+
 #start-page {
     display: flex;
     flex-direction: column;
@@ -65,6 +78,12 @@ canvas {
     min-width: 100vw;
     background-image: url('img/background/Mesa de trabajo 1.png');
     background-position: top;
+}
+
+.start-page-btn {
+    display: flex;
+    position: absolute;
+    top: 20%;
 }
 
 .start-btn-box {
@@ -80,7 +99,7 @@ canvas {
     margin-left: -26px;
 }
 
-.start-btn {
+.start-btn, .demo-btn {
     background: radial-gradient(rgb(0 152 255), rgb(90 0 193));
     font-size: 48px;
     color: white;
@@ -88,11 +107,9 @@ canvas {
     border: 3px solid white;
     filter: drop-shadow(0px 0px 20px #9e9ec9);
     box-shadow: -2px 0px 6px 0px #fdfdfdad;
-    position: absolute;
-    top: 20%;
 }
 
-.start-btn:hover, .rules-img:hover {
+.start-btn:hover, .rules-img:hover, .demo-btn:hover, .close-video-img:hover {
     cursor: pointer;
     transform: scale(1.1);
     transition: 225ms ease-in-out;
@@ -122,6 +139,23 @@ svg {
     background-color: rgb(203 200 200 / 60%);
     z-index: 9999;
 }
+
+#video-popUp {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(203 200 200 / 60%);
+    z-index: 9999;
+}
+
+#video-popUp video {
+    height: 480px;
+}
   
 .popUpWindow {
     background: radial-gradient(rgb(201 193 220), rgb(90 0 193));
@@ -136,6 +170,16 @@ svg {
     padding-right: 8px;
     overflow-y: overlay;
     text-align: center;
+}
+
+.video-popUpWindow {
+    box-shadow: 0 0 10px #fdfdfdad;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
 }
   
 #popUpBox span {

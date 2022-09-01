@@ -2,6 +2,7 @@ let canvas;
 let world;
 let keyboard = new Keyboard();
 let modal = false;
+let video_modal = false;
 let fullscreenWindow = false;
 let gameEnd;
 
@@ -24,7 +25,17 @@ function init() {
 /**
  * Show Instruction Windoww
  */
-function RulesModal() {
+function showDemo() {
+    if (video_modal === false) {
+        document.getElementById("video-popUp").style.display = "block";
+        video_modal = true;
+    } else {
+        document.getElementById("video-popUp").style.display = "none";
+        video_modal = false;
+    }
+}
+
+function rulesModal() {
     if (modal === false) {
         document.getElementById("popUpBox").style.display = "block";
         modal = true;

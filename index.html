@@ -24,8 +24,6 @@
     <script src="./models/level.class.js"></script>
     <script src="./models/background_objects/background_object.class.js"></script>
     <script src="./models/background_objects/sunlight.class.js"></script>
-    <script src="./models/background_objects/barrier_horizontal.class.js"></script>
-    <script src="./models/background_objects/barrier_vertikal.class.js"></script>
     <script src="./models/enemies/fish_puffer_red.class.js"></script>
     <script src="./models/enemies/fish_puffer_green.class.js"></script>
     <script src="./models/enemies/fish_orange.class.js"></script>
@@ -41,7 +39,7 @@
 
 <body>
     <div id="start-page">
-        <img onclick="RulesModal()" class="rules-img" src="./img/rules.png">
+        <img onclick="rulesModal()" class="rules-img" src="./img/rules.png">
         <!-- HEADER ANIMATION -->
         <svg viewbox="0 0 300 20">
             <defs>
@@ -62,18 +60,32 @@
                 World</text>
         </svg>
         <!-- HEADER ANIMATION END-->
+        <div class="start-page-btn">
+            <button class="start-btn margin-48" onclick="loadGame()">
+                <div class="start-btn-box">
+                    <span>START</span>
+                    <img src="./img/sharkie/idle/Prewiew.gif">
+                </div>
+            </button>
+    
+            <button class="demo-btn" onclick="showDemo()">
+                <div class="start-btn-box">
+                    <span>DEMO GAME</span>
+                </div>
+            </button>
+        </div>
 
-        <button class="start-btn" onclick="loadGame()">
-            <div class="start-btn-box">
-                <span>START</span>
-                <img src="./img/sharkie/idle/Prewiew.gif">
+        <div class="popUpBox" id="video-popUp">
+            <div class="video-popUpWindow">
+                <img onclick="showDemo()" class="close-video-img" src="./img/close.png">
+                <video src="./video/demo.mp4" controls></video>
             </div>
-        </button>
+        </div>
 
         <!-- INSTRUCTION -->
         <div class="popUpBox" id="popUpBox">
             <div class="popUpWindow">
-                <img onclick="RulesModal()" class="rules-img close-btn-height" src="./img/close.png">
+                <img onclick="rulesModal()" class="rules-img close-btn-height" src="./img/close.png">
                 <h2 class="instruction">Instruction</h2>
                 <div class="key-rules">
                     <div class="rule">
