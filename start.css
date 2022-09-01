@@ -5,7 +5,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    background-image: url('img/background/water_bg.jpg');
+    background-image: url('./img/background/water_bg.jpg');
     font-family: 'luckiest_guy', Arial, Helvetica, sans-serif;
 }
 
@@ -70,8 +70,8 @@ canvas {
     align-items: center;
     min-height: 100vh;
     min-width: 100vw;
-    background-image: url('img/background/Mesa de trabajo 1.png');
-    background-position: top;
+    background-image: url('./img/background/legacy/Light/1.png');
+    background-position: center;
 }
 
 .start-page-btn {
@@ -90,11 +90,12 @@ canvas {
 .start-btn-box img {
     width: 150px;
     margin-right: -26px;
-    margin-left: -26px;
+    margin-left: -10px;
 }
 
 .start-btn, .demo-btn {
-    background: radial-gradient(rgb(0 152 255), rgb(90 0 193));
+    /* background: radial-gradient(rgb(0 152 255), rgb(90 0 193)); */
+    background: radial-gradient(rgb(201 193 220), rgb(90 0 193));
     font-size: 48px;
     color: white;
     border-radius: 24px;
@@ -116,6 +117,24 @@ svg {
     filter: drop-shadow(0px 0px 20px  #9e9ec9); 
 }
 
+.game-description {
+    position: absolute;
+    top: 45%;
+    font-size: 24px;
+    color: white;
+    padding: 12px;
+    background: radial-gradient(rgb(201 193 220), rgb(90 0 193));
+    border-radius: 10px;
+    box-shadow: -2px 0px 6px 0px #fdfdfdad;
+    letter-spacing: 2px;
+}
+
+.game-description h3 {
+    margin-top: 0px;
+    margin-bottom: 22px;
+    text-align: center;
+    text-decoration: underline;
+}
 
 /* START-PAGE END*/
 
@@ -149,6 +168,8 @@ svg {
 
 #video-popUp video {
     height: 480px;
+    border: 5px solid #3c54fe;
+    border-radius: 10px;
 }
   
 .popUpWindow {
@@ -167,7 +188,6 @@ svg {
 }
 
 .video-popUpWindow {
-    box-shadow: 0 0 10px #fdfdfdad;
     border-radius: 10px;
     position: absolute;
     top: 50%;
@@ -253,6 +273,7 @@ svg {
 
 .enemies-header {
     font-size: 36px;
+    margin: 6px;
     color: white;
 }
 

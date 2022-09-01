@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sharky</title>
-    <!-- Style Libraries-->
+    <!-- Style Libraries -->
+    <link rel="shortcut icon" href="./img/fish.png" type="image/x-icon">
     <link rel="stylesheet" href="./start.css">
     <link rel="stylesheet" href="./style.css">
     <!-- JSON -->
@@ -39,8 +40,11 @@
 </head>
 
 <body>
+    <!-- LOBBY -->
     <div id="start-page">
-        <img onclick="rulesModal()" class="rules-img" src="./img/rules.png">
+        <!-- INSTRUCTION BUTTON -->
+        <img title="Instruction" onclick="rulesModal()" class="rules-img" src="./img/rules.png">
+
         <!-- HEADER ANIMATION -->
         <svg viewbox="0 0 300 20">
             <defs>
@@ -60,7 +64,9 @@
             <text text-anchor="middle" x="60" y="15" font-size="15" fill="url(#wave)" fill-opacity="0.7">Sharky's
                 World</text>
         </svg>
-        <!-- HEADER ANIMATION END-->
+        <!-- HEADER ANIMATION END -->
+
+        <!-- START BUTTON AND DEMO GAME BUTTON -->
         <div class="start-page-btn">
             <button class="start-btn margin-48" onclick="loadGame()">
                 <div class="start-btn-box">
@@ -68,20 +74,36 @@
                     <img src="./img/sharkie/idle/Prewiew.gif">
                 </div>
             </button>
-    
+
             <button class="demo-btn" onclick="showDemo()">
                 <div class="start-btn-box">
-                    <span>DEMO GAME</span>
+                    <span>DEMO VIDEO</span>
                 </div>
             </button>
         </div>
+        <!-- START BUTTON AND DEMO GAME BUTTON END -->
 
+        <!-- GAME DESCRIPTION -->
+
+        <div class="game-description">
+            <h3>HOW TO PLAY</h3>
+            <span> 1. </span> <span> Help Sharky defeat the Endboss with bubbles to win the game. </span> <br> <br>
+            <span> 2. </span> <span> Collect at least 5 coins in the game so that you can use the bubble attack. </span> <br> <br>
+            <span> 3. </span> <span> Dodge the enemies to avoid getting hurt. </span> <br> <br>
+            <span> 4. </span> <span> You can kill the enemies with a slap attack. </span> <br> <br>
+            <span> 5. </span> <span> Heal yourself with the hearts. </span>
+            
+        </div>
+        <!-- GAME DESCRIPTION -->
+      
+        <!-- DEMO VIDEO -->
         <div class="popUpBox" id="video-popUp">
             <div class="video-popUpWindow">
                 <img onclick="showDemo()" class="close-video-img" src="./img/close.png">
                 <video src="./video/demo.mp4" controls></video>
             </div>
         </div>
+        <!-- DEMO VIDEO END -->
 
         <!-- INSTRUCTION -->
         <div class="popUpBox" id="popUpBox">
@@ -130,7 +152,7 @@
         </div>
         <!-- INSTRUCTION END -->
     </div>
-    <!-- START-PAGE END -->
+    <!-- LOBBY END -->
 
     <!-- GAME-CONTAINER -->
     <div id="game" class="d-none">
@@ -172,21 +194,26 @@
                 <img class="info-img" src="./img/sharkie/attack/fin_slap/PreviewOP2.gif">
             </div>
         </div>
-        <!-- INFO-BAR IN GAME END-->
+        <!-- INFO-BAR IN GAME END -->
 
+        <!-- GAME SCREEN -->
         <canvas id="canvas" width="720px" height="480px">
             <!-- Bei canvas muss die width/height immer inline geschrieben werden, nicht in style.css -->
         </canvas>
-    </div>
-    <!-- GAME-CONTAINER END-->
+        <!-- GAME SCREEN END -->
 
+    </div>
+    <!-- GAME-CONTAINER END -->
+
+    <!-- GAME OVER SCREEN -->
     <div id="gameover-img" class="d-none gameover-img">
         <img src="./img/botones/titles/game_over/Recurso 11.png">
         <audio class="d-none" id="audio-gameover" src="./audio/gameover.mp3"></audio>
     </div>
 
+    <!-- WIN SCREEN -->
     <div id="gamewin-img" class="d-none gameover-img">
-        <img src="./img/botones/titles/you_win/Mesa de trabajo 1.png">
+        <img class="win-img" src="./img/botones/titles/you_win/Mesa de trabajo 1.png">
         <audio class="d-none" id="audio-gamewin" src="./audio/win.mp3"></audio>
     </div>
 </body>

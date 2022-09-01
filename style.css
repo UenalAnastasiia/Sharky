@@ -174,3 +174,8 @@
     width: 50vw;
     height: 50vh;
 }
+
+.win-img {
+    height: 480px;
+    width: 720px;
+}
