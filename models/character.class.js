@@ -7,7 +7,7 @@ class Character extends MovableObject {
     notHurtBySlap = false;
     slapAttack = false;
 
-    
+
     constructor() {
         super().loadImage('./img/sharkie/idle/1.png');
         this.loadImages(CHARACTER_IMAGES.SWIMMING);
@@ -37,8 +37,8 @@ class Character extends MovableObject {
         setInterval(() => {
             if (this.isDead()) {
                 this.characterDead();
-             } else if (this.world.keyboard.KEY_D) {
-                this.showAnimation(CHARACTER_IMAGES.BUBBLEATTACK);
+            } else if (this.world.keyboard.KEY_D) {
+                this.bubbleAttackImages();
             } else if (this.isHurt() && !this.slapAttack && !this.world.keyboard.KEY_SPACE) {
                 this.showAnimation(CHARACTER_IMAGES.HURT);
             } else if (this.world.keyboard.KEY_SPACE && this.slapAttack == false) {
@@ -54,6 +54,37 @@ class Character extends MovableObject {
         if (this.world.keyboard.KEY_RIGHT || this.world.keyboard.KEY_LEFT || this.world.keyboard.KEY_DOWN || this.world.keyboard.KEY_UP) {
             this.showAnimation(CHARACTER_IMAGES.SWIMMING);
         }
+    }
+
+
+    bubbleAttackImages() {
+        this.firstCurrentImage = 0;
+        let showBubbleAttack = setInterval(() => {
+            this.showOneInterval(CHARACTER_IMAGES.BUBBLEATTACK, showBubbleAttack, "bubble_attack");
+        }, 100);
+    }
+
+
+    characterAttack() {
+        this.firstCurrentImage = 0;
+        let showSlap = setInterval(() => {
+            this.showOneInterval(CHARACTER_IMAGES.ATTACK, showSlap, "slap");
+        }, 100);
+        this.slapAttack = true;
+        setTimeout(() => {
+            this.slapAttack = false;
+        }, 150);
+    }
+
+
+    characterDead() {
+        this.firstCurrentImage = 0;
+        let deadImages = setInterval(() => {
+            this.showOneInterval(CHARACTER_IMAGES.DEAD, deadImages, "dead");
+        }, 100);
+        setTimeout(() => {
+            showGameOverScreen();
+        }, 2000);
     }
 
 
@@ -96,25 +127,5 @@ class Character extends MovableObject {
     moveDownKey() {
         this.y += this.speed;
         this.swimmming_sound.play();
-    }
-
-
-    /**
-     * If Spacebar pressed => Character attacked
-     */
-    characterAttack() {
-        this.showAnimation(CHARACTER_IMAGES.ATTACK);
-        this.slapAttack = true;
-        setTimeout(() => {
-            this.slapAttack = false;
-        }, 150);
-    }
-    
-
-    characterDead() {
-        this.showAnimation(CHARACTER_IMAGES.DEAD);
-        setTimeout(() => {
-            showGameOverScreen();
-        }, 1000);
     }
 }

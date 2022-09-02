@@ -18,23 +18,25 @@ class Endboss extends MovableObject {
     animate() {
         setInterval(() => {
             this.showAnimation(ENEMIES_ENDBOSS_IMAGES.SWIMMING);
-        }, 1000);
+        }, 500);
     }
 
 
     showHurtImages() {
-        this.showAnimation(ENEMIES_ENDBOSS_IMAGES.HURT);
+        this.firstCurrentImage = 0;
+        let endbossHurtImages = setInterval(() => {
+            this.showOneInterval(ENEMIES_ENDBOSS_IMAGES.HURT, endbossHurtImages, "endboss_hurt");
+        }, 100);
     }
 
 
     showDeadImages() {
-        setInterval(() => {
-            this.showAnimation(ENEMIES_ENDBOSS_IMAGES.DEAD);
-        }, 500);
-
+        this.firstCurrentImage = 0;
+        let endbossDeadImages = setInterval(() => {
+            this.showOneInterval(ENEMIES_ENDBOSS_IMAGES.DEAD, endbossDeadImages, "endboss_dead");
+        }, 200);
         setTimeout(() => {
             showEndScreen();
         }, 2000);
     }
-
 }

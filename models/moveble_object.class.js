@@ -9,6 +9,7 @@ class MovableObject extends DrawableObject {
     energy = 100;
     lastHit = 0;
     currentImage = 0;
+    firstCurrentImage = 0;
     collectedCoins = 0;
     coins = 0;
     collectedLifes = 100;
@@ -25,6 +26,19 @@ class MovableObject extends DrawableObject {
         let path = images[i];
         this.img = this.imageCache[path];
         this.currentImage++;
+    }
+
+
+    showOneInterval(images, interval, nextInterval) {
+        let i = this.firstCurrentImage % images.length;
+        let path = images[i];
+        this.img = this.imageCache[path];
+        this.firstCurrentImage++;
+
+        if (this.firstCurrentImage > images.length - 1) {
+            clearInterval(interval);
+            clearInterval(nextInterval);
+        }
     }
 
 
