@@ -68,7 +68,7 @@ canvas {
     border-radius: 100%;
     border: 2px solid white;
     position: absolute;
-    top: -75px;
+    top: -60px;
     right: -100px;
     height: 48px;
     box-shadow: -2px 0px 6px 0px #fdfdfdad;
@@ -83,6 +83,7 @@ canvas {
     min-width: 100vw;
     background-image: url('./img/background/legacy/Light/1.png');
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .start-page-btn {

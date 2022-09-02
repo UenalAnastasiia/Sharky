@@ -6,14 +6,6 @@ class CoinsObject extends MovableObject {
     constructor() {
         super().loadImage('./img/marcadores/coins/3.png');
         this.coinsPosition();
-        // this.animate();
-    }
-
-
-    animate() {
-        setInterval(() => {
-            this.showAnimation(ENEMIES_PUFFER_GREEN_IMAGES.SWIMMING);
-        }, 100);
     }
 
 

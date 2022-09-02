@@ -107,7 +107,8 @@ class World {
         }
 
         moveObj.draw(this.ctx);
-        // moveObj.drawFrame(this.ctx);
+
+        // moveObj.drawFrame(this.ctx);     // Load Hepl-Function for Rectangle
 
         if (moveObj.mirrorImage) {
             this.turnImageBack(moveObj);
@@ -130,7 +131,7 @@ class World {
 
 
     /**
-     * Help-Function to check different options 
+     * Help-Function to check different options and collisions 
      */
     check() {
         setInterval(() => {

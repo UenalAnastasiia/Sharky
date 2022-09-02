@@ -37,6 +37,7 @@ function showDemo() {
     }
 }
 
+
 function rulesModal() {
     if (modal === false) {
         document.getElementById("popUpBox").style.display = "block";
@@ -114,6 +115,10 @@ function showGameOverScreen() {
     }
 }
 
+
+/**
+ * Show Win Screen, if Character wins and go back to lobby
+ */
 function showEndScreen() {
     document.getElementById('audio').pause();
     new Audio('./audio/hurt.mp3').pause();

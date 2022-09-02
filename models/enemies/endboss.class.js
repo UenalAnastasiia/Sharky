@@ -14,6 +14,7 @@ class Endboss extends MovableObject {
         this.animate();
     }
 
+    
     animate() {
         setInterval(() => {
             this.showAnimation(ENEMIES_ENDBOSS_IMAGES.SWIMMING);

@@ -8,7 +8,6 @@ class BubbleObject extends MovableObject {
         this.x = x;
         this.y = y;
         this.throwUpBubble();
-
     }
 
 

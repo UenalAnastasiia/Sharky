@@ -24,9 +24,8 @@ class Fish_Puffer_Green extends MovableObject {
     pufferSwimmDirection() {
         if (this.x < 2880 || this.y < 330) {
             this.x = 800 + Math.random() * 800;
-            this.y = 20 + Math.random() * 400;         // Math.random() gibt eine zufällige Zahl zwischen 0 und 1 
+            this.y = 20 + Math.random() * 400;
             this.speed = 0.2 + Math.random() * 0.5;
         }
     }
-
 }
