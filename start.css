@@ -131,7 +131,7 @@ svg {
 
 .game-description {
     position: absolute;
-    top: 45%;
+    top: 50%;
     font-size: 24px;
     color: white;
     padding: 12px;
@@ -229,7 +229,7 @@ svg {
 
 .instruction {
     color: white;
-    margin-top: 36px;
+    margin-top: 50px;
     font-size: 52px;
     margin-left: 8px;
     margin-right: 8px;

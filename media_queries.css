@@ -51,7 +51,6 @@ canvas {
     .popUpWindow {
         top: 50%;
         max-height: 75%;
-        border-radius: 0;
     }
 
     .top-6 {
@@ -83,12 +82,14 @@ canvas {
 
     .mobile-header {
         display: block;
-        top: 50px;
+        top: 25px;
     }
 
     .start-page-btn {
         flex-direction: column;
         align-items: center;
+        top: 10%;
+        margin-top: 10%;
     }
 
     .start-btn {
@@ -112,6 +113,52 @@ canvas {
     }
 }
 
+@media (max-height: 600px) {
+    .start-page-btn span {
+        font-size: 24px;
+    }
+
+    .demo-btn {
+        margin-bottom: 6px;
+        margin-left: 4px;
+    }
+    
+    .game-description {
+        font-size: 16px;
+        margin-top: -8px;
+    }
+
+    .popUpWindow {
+        top: 50%;
+        max-height: 75%;
+    }
+}
+
+@media (max-height: 420px) {
+    .start-page-btn span {
+        font-size: 24px;
+    }
+
+    .demo-btn {
+        margin-bottom: 6px;
+        margin-left: 4px;
+    }
+    
+    .game-description {
+        font-size: 12px;
+        margin-top: -8px;
+    }
+
+    #video-popUp video {
+        max-width: 400px;
+    }
+
+    .popUpWindow {
+        top: 50%;
+        max-height: 75%;
+    }
+}
+
 @media (max-width: 400px) {
     .mobile-header {
         font-size: 32px;
@@ -127,6 +174,52 @@ canvas {
 
     .game-description {
         letter-spacing: 0;
+        margin-top: 20px;
+        top: 40%;
+    }
+}
+
+@media (max-height: 380px) {
+    .mobile-header {
+        top: -5px;
+    }
+
+    .start-page-btn {
+        margin-top: 50px !important;
+        flex-direction: row;
+    }
+
+    .start-page-btn span {
+        font-size: 24px;
+    }
+
+    .demo-btn {
+        margin-bottom: 6px;
+        margin-left: 4px;
+    }
+    
+    .game-description {
+        font-size: 12px;
+        margin-top: -8px;
+        top: 50% !important;
+    }
+
+    .start-btn-box img {
+        width: 120px;
+    }
+}
+
+@media (max-height: 360px) {
+    .start-page-btn {
+        margin-top: 0 !important;
+    }
+
+    .game-description {
+        margin-top: -16px;
+    }
+
+    .game-description h3 {
+        margin-bottom: 12px;
     }
 }
 
@@ -149,6 +242,56 @@ canvas {
     }
 }
 
+@media (max-width: 300px) {
+    .mobile-header {
+        top: -5px;
+    }
+
+    .start-page-btn {
+        margin-top: 15%;
+    }
+
+    .game-description {
+        top: 45%;
+    }
+}
+
+@media (max-height: 280px) {
+    .mobile-header {
+        top: -20px;
+        font-size: 32px;
+    }
+
+    .start-page-btn {
+        margin-top: 20px !important;
+    }
+
+    .start-page-btn span {
+        font-size: 12px;
+    }
+
+    .start-btn-box {
+        height: 40px;
+    }
+
+    .start-btn-box img {
+        width: 100px;
+    }
+
+    .game-description {
+        margin-top: -36px;
+    }
+
+    .game-description h3 {
+        margin-bottom: 12px;
+    }
+
+    .close-video-img {
+        height: 24px;
+        top: -16px;
+        right: -36px;
+    }
+}
 
 /* GAME CANVAS */
 @media only screen and (max-width: 720px) {

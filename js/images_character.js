@@ -16,7 +16,8 @@ CHARACTER_IMAGES = {
         './img/sharkie/attack/fin_slap/5.png',
         './img/sharkie/attack/fin_slap/6.png',
         './img/sharkie/attack/fin_slap/7.png',
-        './img/sharkie/attack/fin_slap/8.png'
+        './img/sharkie/attack/fin_slap/8.png',
+        './img/sharkie/idle/1.png'
     ],
 
     'DEAD': [
