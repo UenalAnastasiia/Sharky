@@ -242,7 +242,7 @@ class World {
 
 
     collidingWithEnemie() {
-        this.character.hit(2);
+        this.character.hit(5);
         new Audio('./audio/hurt.mp3').play();
         this.statusBar_life.setPercentage(this.character.energy);
     }

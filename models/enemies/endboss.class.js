@@ -31,12 +31,14 @@ class Endboss extends MovableObject {
 
 
     showDeadImages() {
+        new Audio('./audio/hurt.mp3').pause();
         this.firstCurrentImage = 0;
         let endbossDeadImages = setInterval(() => {
             this.showOneInterval(ENEMIES_ENDBOSS_IMAGES.DEAD, endbossDeadImages, "endboss_dead");
         }, 200);
         setTimeout(() => {
+            stopIntervals();
             showEndScreen();
-        }, 2000);
+        }, 1500);
     }
 }

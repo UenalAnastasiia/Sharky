@@ -20,7 +20,6 @@ function init() {
     world = new World(canvas, keyboard);
     btnTouchEventStart();
     btnTouchEventEnd();
-    // console.log('My Character is', world.character);
 }
 
 
@@ -98,13 +97,20 @@ function closeHelpInfo() {
 }
 
 
+function stopIntervals() {
+    let id = window.setTimeout(() => { }, 0);
+    while (id--) {
+        window.clearTimeout(id);
+    }
+}
+
+
 /**
  * Show Game Over Screen, if Character is dead and go back to lobby
  */
 function showGameOverScreen() {
     if (gameEnd = 'GameOver') {
         document.getElementById('audio').pause();
-        new Audio('./audio/hurt.mp3').pause();
         document.getElementById('gameover-img').classList.remove('d-none');
         document.getElementById('game').classList.add('d-none');
         document.getElementById('audio-gameover').play();
@@ -121,7 +127,6 @@ function showGameOverScreen() {
  */
 function showEndScreen() {
     document.getElementById('audio').pause();
-    new Audio('./audio/hurt.mp3').pause();
     document.getElementById('gamewin-img').classList.remove('d-none');
     document.getElementById('game').classList.add('d-none');
     document.getElementById('audio-gamewin').play();

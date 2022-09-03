@@ -78,13 +78,15 @@ class Character extends MovableObject {
 
 
     characterDead() {
+        new Audio('./audio/hurt.mp3').pause();
         this.firstCurrentImage = 0;
         let deadImages = setInterval(() => {
             this.showOneInterval(CHARACTER_IMAGES.DEAD, deadImages, "dead");
         }, 100);
         setTimeout(() => {
+            stopIntervals();
             showGameOverScreen();
-        }, 2000);
+        }, 1500);
     }
 
 

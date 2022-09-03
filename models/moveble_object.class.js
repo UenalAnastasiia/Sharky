@@ -76,7 +76,7 @@ class MovableObject extends DrawableObject {
      */
     isColliding(moveObj) {
         if (this instanceof Character || this instanceof Fish_Puffer_Green || this instanceof Fish_Puffer_Red || this instanceof Fish_Orange || this instanceof Jelly_Dangerous || this instanceof Jelly_Regular) {
-            return  this.x + 35 + 130 > moveObj.x + 35 && this.y + 110 + 60 > moveObj.y && this.x + 35 < moveObj.x + 35 && this.y + 90 < moveObj.y + moveObj.height;   
+            return this.x + 35 + 130 > moveObj.x + 35 && this.y + 110 + 60 > moveObj.y && this.x + 35 < moveObj.x + 35 && this.y + 90 < moveObj.y + moveObj.height;
         } else if (this instanceof Endboss) {
             return this.x + this.width > moveObj.x + 35 && this.y + this.height > moveObj.y - 110 && this.x + 35 < moveObj.x && this.y + 90 < moveObj.y - 110 + moveObj.height;
         } else {
