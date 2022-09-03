@@ -183,7 +183,6 @@
 /* MOBILE KEYS */
 
 .mobil-keys {
-    max-width: 720px;
     max-height: 70px;
     display: none;
     justify-content: space-around;
@@ -192,11 +191,17 @@
     padding-top: 10px;
 }
 
+.mobil-keys img {
+    margin: 6px;
+}
+
 .mobil-keys img:hover {
     cursor: pointer;
 }
 
 .bubble-key-img {
-    height: 150px;
-    margin-top: -28px;
+    height: 32px;
+    border: 6px solid #042FFE;
+    border-radius: 100%;
+    outline: #042FFE solid 4px;
 }
