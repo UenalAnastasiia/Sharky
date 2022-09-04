@@ -166,7 +166,7 @@ class MovableObject extends DrawableObject {
 
 
     attackEndboss() {
-        this.endbossLife -= 10;
+        this.endbossLife -= 20;
         if (this.endbossLife <= 0) {
             this.endbossLife == 0;
             world.level.endboss[0].showDeadImages();
