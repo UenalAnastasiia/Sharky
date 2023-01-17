@@ -55,8 +55,7 @@ CHARACTER_IMAGES = {
         './img/sharkie/attack/bubble/4.png',
         './img/sharkie/attack/bubble/5.png',
         './img/sharkie/attack/bubble/6.png',
-        './img/sharkie/attack/bubble/7.png'
+        './img/sharkie/attack/bubble/7.png',
+        './img/sharkie/idle/1.png'
     ]
 }
-
-

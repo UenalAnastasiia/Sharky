@@ -6,6 +6,7 @@ class Character extends MovableObject {
     swimmming_sound = new Audio('./audio/swimming.mp3');
     notHurtBySlap = false;
     slapAttack = false;
+    bubbleAttack = false;
 
 
     constructor() {
@@ -61,7 +62,12 @@ class Character extends MovableObject {
         this.firstCurrentImage = 0;
         let showBubbleAttack = setInterval(() => {
             this.showOneInterval(CHARACTER_IMAGES.BUBBLEATTACK, showBubbleAttack, "bubble_attack");
+            console.log('Images: ', CHARACTER_IMAGES.BUBBLEATTACK);
         }, 100);
+        this.bubbleAttack = true;
+        setTimeout(() => {
+            this.bubbleAttack = false;
+        }, 120);
     }
 
 
